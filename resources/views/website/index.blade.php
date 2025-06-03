@@ -1,26 +1,4 @@
-@extends('website.layout.structure')
-@section('main_code')
-
-    <!-- Modal Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="keywords"
-                            aria-describedby="search-icon-1">
-                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Search End -->
-
+@includeIf('website.layout.header')
 
     <!-- Features Start -->
     <div class="container-fluid features mb-5">
@@ -45,8 +23,8 @@
                                 <a href="#" class="h6">
                                     Get the best speak market, news.
                                 </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -70,8 +48,8 @@
                                 <a href="#" class="h6">
                                     Get the best speak market, news.
                                 </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -95,8 +73,8 @@
                                 <a href="#" class="h6">
                                     Get the best speak market, news.
                                 </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -120,8 +98,8 @@
                                 <a href="#" class="h6">
                                     Get the best speak market, news.
                                 </a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -317,7 +295,7 @@
                         unknown printer took a galley
                     </p>
                     <div class="position-relative mx-auto">
-                        <input class="form-control w-100 py-3 rounded-pill" type="email" placeholder="newsers@gmail.com">
+                        <input class="form-control w-100 py-3 rounded-pill left" type="email" placeholder="newsers@gmail.com">
                         <button type="submit"
                             class="btn btn-primary py-3 px-5 position-absolute rounded-pill text-white h-100"
                             style="top: 0; right: 0;">Subscribe Now</button>
@@ -349,8 +327,8 @@
                             <a href="#" class="h4">Lorem Ipsum is simply dummy text of...</a>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -365,8 +343,8 @@
                             <a href="#" class="h4">Lorem Ipsum is simply dummy text of...</a>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -381,8 +359,8 @@
                             <a href="#" class="h4">Lorem Ipsum is simply dummy text of...</a>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -397,8 +375,8 @@
                             <a href="#" class="h4">Lorem Ipsum is simply dummy text of...</a>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -413,8 +391,8 @@
                             <a href="#" class="h4 ">Lorem Ipsum is simply dummy text of...</a>
                             <div class="d-flex justify-content-between">
                                 <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                    2024</small>
+                                <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                    2025</small>
                             </div>
                         </div>
                     </div>
@@ -508,8 +486,8 @@
                                                             <p class="text-uppercase mb-2">Sports</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -527,8 +505,8 @@
                                                             <p class="text-uppercase mb-2">Sports</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -546,8 +524,8 @@
                                                             <p class="text-uppercase mb-2">Sports</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -565,8 +543,8 @@
                                                             <p class="text-uppercase mb-2">Sports</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -584,8 +562,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,8 +617,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -658,8 +636,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -677,8 +655,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -696,8 +674,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -715,8 +693,8 @@
                                                             <p class="text-uppercase mb-2">Magazine</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -770,8 +748,8 @@
                                                             <p class="text-uppercase mb-2">Politics</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -789,8 +767,8 @@
                                                             <p class="text-uppercase mb-2">Politics</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -808,8 +786,8 @@
                                                             <p class="text-uppercase mb-2">Politics</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -827,8 +805,8 @@
                                                             <p class="text-uppercase mb-2">Politics</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -846,8 +824,8 @@
                                                             <p class="text-uppercase mb-2">Politics</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -901,8 +879,8 @@
                                                             <p class="text-uppercase mb-2">Technology</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -920,8 +898,8 @@
                                                             <p class="text-uppercase mb-2">Technology</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -939,8 +917,8 @@
                                                             <p class="text-uppercase mb-2">Technology</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -958,8 +936,8 @@
                                                             <p class="text-uppercase mb-2">Technology</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -977,8 +955,8 @@
                                                             <p class="text-uppercase mb-2">Technology</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1032,8 +1010,8 @@
                                                             <p class="text-uppercase mb-2">Fashion</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1051,8 +1029,8 @@
                                                             <p class="text-uppercase mb-2">Fashion</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1070,8 +1048,8 @@
                                                             <p class="text-uppercase mb-2">Fashion</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1089,8 +1067,8 @@
                                                             <p class="text-uppercase mb-2">Fashion</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1108,8 +1086,8 @@
                                                             <p class="text-uppercase mb-2">Fashion</p>
                                                             <a href="#" class="h6">Get the best speak market, news.</a>
                                                             <small class="text-body d-block"><i
-                                                                    class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                                2024</small>
+                                                                    class="fas fa-calendar-alt me-1"></i> June 2,
+                                                                2025</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1134,8 +1112,8 @@
                                             available,</a>
                                         <div class="d-flex justify-content-between">
                                             <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                2024</small>
+                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                                2025</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1151,8 +1129,8 @@
                                             available,</a>
                                         <div class="d-flex justify-content-between">
                                             <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                2024</small>
+                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                                2025</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1168,8 +1146,8 @@
                                             available,</a>
                                         <div class="d-flex justify-content-between">
                                             <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                2024</small>
+                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                                2025</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1185,8 +1163,8 @@
                                             available,</a>
                                         <div class="d-flex justify-content-between">
                                             <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                2024</small>
+                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                                2025</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1202,8 +1180,8 @@
                                             available,</a>
                                         <div class="d-flex justify-content-between">
                                             <a href="#" class="small text-body link-hover">by Willium Smith</a>
-                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                                2024</small>
+                                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                                2025</small>
                                         </div>
                                     </div>
                                 </div>
@@ -1225,7 +1203,7 @@
                                                 <div class="d-flex justify-content-between mt-4">
                                                     <a href="#" class="small text-white link-hover">By Willium Smith</a>
                                                     <small class="text-white d-block"><i
-                                                            class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                                            class="fas fa-calendar-alt me-1"></i> June 2, 2025</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -1242,7 +1220,7 @@
                                                 <div class="d-flex justify-content-between mt-4">
                                                     <a href="#" class="small text-white link-hover">By Willium Smith</a>
                                                     <small class="text-white d-block"><i
-                                                            class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                                            class="fas fa-calendar-alt me-1"></i> June 2, 2025</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -1253,9 +1231,7 @@
                     </div>
                     <div class="col-lg-4 col-xl-3">
                         <div class="row g-4">
-                            <?php
-                                include_once 'C:\xfinal\htdocs\news\resources\views\website\layout\connected.blade.php'
-                            ?>
+                            @includeIf('website.layout.connected')
                         </div>
                     </div>
                 </div>
@@ -1268,4 +1244,4 @@
         });
     </script>
     <!-- Most Populer News End -->
-@endsection
+@includeIf('website.layout.footer')

@@ -1,13 +1,8 @@
-@extends('website.layout.structure')
-@section('main_code')
+@include('website.layout.header')
+
         <!-- 404 Start -->
         <div class="container-fluid py-5">
             <div class="container py-5 text-center">
-                <ol class="breadcrumb justify-content-center mb-5">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-dark">404</li>
-                </ol>
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <i class="bi bi-exclamation-triangle display-1 text-secondary"></i>
@@ -25,4 +20,4 @@
         });
     </script>
         <!-- 404 End -->
-@endsection 
+@include('website.layout.footer')

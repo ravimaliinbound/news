@@ -1,5 +1,5 @@
-@extends('website.layout.structure')
-@section('main_code')
+@include('website.layout.header')
+
     <!-- Contact Us Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
@@ -82,11 +82,13 @@
                                     <div>
                                         <h4>Share</h4>
                                         <div class="d-flex">
-                                            <a class="me-3" href=""><i class="fab fa-twitter text-dark link-hover"></i></a>
+                                            <a class="me-3" href="https://x.com/kaRaviKumarbc"><i
+                                                    class="fab fa-twitter text-dark link-hover"></i></a>
                                             <a class="me-3" href=""><i
                                                     class="fab fa-facebook-f text-dark link-hover"></i></a>
                                             <a class="me-3" href=""><i class="fab fa-youtube text-dark link-hover"></i></a>
-                                            <a class="" href=""><i class="fab fa-linkedin-in text-dark link-hover"></i></a>
+                                            <a class="" href="https://www.linkedin.com/in/skilled-ravi/"><i
+                                                    class="fab fa-linkedin-in text-dark link-hover"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -103,4 +105,4 @@
         });
     </script>
     <!-- Contact Us End -->
-@endsection
+@include('website.layout.footer')

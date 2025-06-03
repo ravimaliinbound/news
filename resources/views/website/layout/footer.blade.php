@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="d-flex position-relative rounded-pill overflow-hidden">
-                        <input class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+                        <input class="form-control border-0 w-100 py-3 rounded-pill left" type="email"
                             placeholder="newsers@gmail.com">
                         <button type="submit"
                             class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
@@ -29,13 +29,14 @@
                     <p class="text-secondary line-h">Email: <span class="text-white">newsers@gmail.com</span></p>
                     <p class="text-secondary line-h">Phone: <span class="text-white">+91 9352238608</span></p>
                     <div class="d-flex line-h">
-                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://x.com/kaRaviKumarbc"><i
                                 class="fab fa-twitter text-dark"></i></a>
                         <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
                                 class="fab fa-facebook-f text-dark"></i></a>
                         <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
                                 class="fab fa-youtube text-dark"></i></a>
-                        <a class="btn btn-light btn-md-square rounded-circle" href=""><i
+                        <a class="btn btn-light btn-md-square rounded-circle"
+                            href="https://www.linkedin.com/in/skilled-ravi/"><i
                                 class="fab fa-linkedin-in text-dark"></i></a>
                     </div>
                 </div>
@@ -55,8 +56,8 @@
                                     <a href="#" class="h6 text-white">
                                         Get the best speak market, news.
                                     </a>
-                                    <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                        2024</small>
+                                    <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                        2025</small>
                                 </div>
                             </div>
                         </a>
@@ -73,8 +74,8 @@
                                     <a href="#" class="h6 text-white">
                                         Get the best speak market, news.
                                     </a>
-                                    <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9,
-                                        2024</small>
+                                    <small class="text-white d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                        2025</small>
                                 </div>
                             </div>
                         </a>

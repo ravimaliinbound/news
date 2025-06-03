@@ -329,7 +329,9 @@
     color: var(--bs-white);
     border-radius: 10px;
 }
-
+.left::placeholder{
+    padding-left: 10px;
+}   
 .populer-news .tab-class .nav-item a.active {
     background: var(--bs-primary) !important;
 }

@@ -67,7 +67,7 @@
                         <div class="navbar-nav mx-auto border-top">
                             <a href="index" class="nav-item nav-link" id="home">Home</a>
                             <a href="detail" class="nav-item nav-link" id="detail">Details</a>
-                            <a href="404" class="nav-item nav-link" id="404">404 Page</a>
+                            <!-- <a href="404" class="nav-item nav-link" id="404">404 Page</a> -->
                             <a href="contact" class="nav-item nav-link" id="contact">Contact Us</a>
                         </div>
                     </div>

@@ -38,7 +38,7 @@
                         <div class="rounded-circle position-relative">
                             <div class=" rounded-circle">
                                 <img src="{{url('website/img/features-sports-1.jpg')}}"
-                                    class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    class="img-zoomin img-fluid rounded-circle w-100" alt="Sports">
                             </div>
                             <span
                                 class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
@@ -51,8 +51,8 @@
                             <a href="#" class="h6">
                                 Get the best speak market, news.
                             </a>
-                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                2024</small>
+                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                2025</small>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="rounded-circle position-relative">
                             <div class="overflow-hidden rounded-circle">
                                 <img src="{{url('website/img/features-technology.jpg')}}"
-                                    class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    class="img-zoomin img-fluid rounded-circle w-100" alt="Technology">
                             </div>
                             <span
                                 class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
@@ -76,8 +76,8 @@
                             <a href="#" class="h6">
                                 Get the best speak market, news.
                             </a>
-                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                2024</small>
+                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                2025</small>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <div class="rounded-circle position-relative">
                             <div class="overflow-hidden rounded-circle">
                                 <img src="{{url('website/img/features-fashion.jpg')}}"
-                                    class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    class="img-zoomin img-fluid rounded-circle w-100" alt="Fashion">
                             </div>
                             <span
                                 class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
@@ -101,8 +101,8 @@
                             <a href="#" class="h6">
                                 Get the best speak market, news.
                             </a>
-                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                2024</small>
+                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                2025</small>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <div class="rounded-circle position-relative">
                             <div class="overflow-hidden rounded-circle">
                                 <img src="{{url('website/img/features-life-style.jpg')}}"
-                                    class="img-zoomin img-fluid rounded-circle w-100" alt="">
+                                    class="img-zoomin img-fluid rounded-circle w-100" alt="Lifestyle">
                             </div>
                             <span
                                 class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
@@ -126,8 +126,8 @@
                             <a href="#" class="h6">
                                 Get the best speak market, news.
                             </a>
-                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> December 9,
-                                2024</small>
+                            <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
+                                2025</small>
                         </div>
                     </div>
                 </div>
