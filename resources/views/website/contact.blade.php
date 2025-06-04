@@ -18,7 +18,7 @@
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-lg-7">
                         <form action="" class="mb-4">
                             <div class="row g-4">

@@ -20,7 +20,7 @@ Route::get('/contact', function () {
     return view('website.contact');
 });
 
-// page not found route for unknown route which is not defined
+// page not found, for unknown route which is not defined
 Route::fallback(function () {
     return redirect('404');
 });

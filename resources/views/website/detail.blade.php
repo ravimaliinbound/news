@@ -301,7 +301,7 @@
                                 <div class="col-12">
                                     <a href="#"
                                         class="link-hover btn btn-light w-100 rounded text-uppercase text-dark py-3">
-                                        Relationship
+                                        Relationship 
                                     </a>
                                 </div>
                                 <div class="col-12">
