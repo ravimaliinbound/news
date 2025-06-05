@@ -40,9 +40,6 @@
                                 <img src="{{url('website/img/features-sports-1.jpg')}}"
                                     class="img-zoomin img-fluid rounded-circle w-100" alt="Sports">
                             </div>
-                            <span
-                                class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
-                                style="top: 10%; right: -10px;">3</span>
                         </div>
                     </div>
                     <div class="col-8">
@@ -65,9 +62,6 @@
                                 <img src="{{url('website/img/features-technology.jpg')}}"
                                     class="img-zoomin img-fluid rounded-circle w-100" alt="Technology">
                             </div>
-                            <span
-                                class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
-                                style="top: 10%; right: -10px;">3</span>
                         </div>
                     </div>
                     <div class="col-8">
@@ -90,9 +84,6 @@
                                 <img src="{{url('website/img/features-fashion.jpg')}}"
                                     class="img-zoomin img-fluid rounded-circle w-100" alt="Fashion">
                             </div>
-                            <span
-                                class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
-                                style="top: 10%; right: -10px;">3</span>
                         </div>
                     </div>
                     <div class="col-8">
@@ -115,9 +106,6 @@
                                 <img src="{{url('website/img/features-life-style.jpg')}}"
                                     class="img-zoomin img-fluid rounded-circle w-100" alt="Lifestyle">
                             </div>
-                            <span
-                                class="rounded-circle border border-2 border-white bg-primary btn-sm-square text-white position-absolute"
-                                style="top: 10%; right: -10px;">3</span>
                         </div>
                     </div>
                     <div class="col-8">

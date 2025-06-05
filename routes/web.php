@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// use Illuminate\Http\Request;
-// Route::get('/abc', function (Request $request) {
-//         return view('website.index');
-// });
-
 Route::get('/', function () {
     return view('website.index');
 });
@@ -20,7 +15,10 @@ Route::get('/contact', function () {
     return view('website.contact');
 });
 
-// page not found, for unknown route which is not defined
+/*
+ * 404 view, for unknown route which is not defined
+ */
+
 Route::fallback(function () {
     return redirect('404');
 });
