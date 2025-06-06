@@ -21,7 +21,7 @@
                             <a href="#" class="mb-0 link-hover text-uppercase text-primary">Entertainment</a>
                              <big>
                                 <b>
-                                    <p class="text-dark mb-0 link-hover">Verde Review – Secure and Fast Payouts</p>
+                                    <p class="text-dark mb-0">Verde Review – Secure and Fast Payouts</p>
                                 </b>
                             </big>
                         </div>
@@ -40,7 +40,7 @@
                             <a href="#" class="mb-0 link-hover text-uppercase text-primary">News</a>
                             <big>
                                 <b>
-                                    <p class="text-dark mb-0 link-hover">How Federal Drive Time Laws Help Prevent Truck Accidents and Save Lives</p>
+                                    <p class="text-dark mb-0">How Federal Drive Time Laws Help Prevent Truck Accidents and Save Lives</p>
                                 </b>
                             </big>
                         </div>
@@ -62,7 +62,7 @@
                                 <div class="col-5">
                                     <div class="overflow-hidden rounded">
                                         <img src="{{url('website/img/news-3.jpg')}}"
-                                            class="img-zoomin img-fluid rounded w-100" alt="">
+                                            class="img-zoomin img-fluid w-100" alt="">
                                     </div>
                                 </div>
                                 <div class="col-7">
