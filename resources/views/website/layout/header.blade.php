@@ -64,11 +64,13 @@
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto border-top">
-                            <a href="index" class="nav-item nav-link" id="home">Home</a>
-                            <a href="detail" class="nav-item nav-link" id="detail">Details</a>
-                            <!-- <a href="404" class="nav-item nav-link" id="404">404 Page</a> -->
-                            <a href="contact" class="nav-item nav-link" id="contact">Contact Us</a>
+                        <div class="navbar-nav mx-auto border-top ">
+                            <a href="index" class="nav-item nav-link" id="home">News</a>
+                            <a href="technology" class="nav-item nav-link" id="technology">Technology</a>
+                            <a href="business" class="nav-item nav-link" id="business">Business</a>
+                            <a href="entertainment" class="nav-item nav-link" id="entertainment">Entertainment</a>
+                            <a href="science" class="nav-item nav-link" id="science">Science / Health</a>
+                            <a href="travel" class="nav-item nav-link" id="travel">Travel</a>
                         </div>
                     </div>
                 </nav>

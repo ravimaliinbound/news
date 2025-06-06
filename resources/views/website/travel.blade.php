@@ -5,9 +5,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
-                <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : News</a>
+                <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Travel</a>
             </div>
-            <p class="mt-3 mb-4">All news about the web are published on this page.</p>
+            <p class="mt-3 mb-4">All travel news and updates are published on this page.</p>
         </div>
         <div class="row g-4 my-3">
             <div class="col-lg-7 col-xl-8 mt-0">
@@ -147,7 +147,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#home").addClass('active');
+        $("#travel").addClass('active');
     });
 </script>
 <!-- Most Populer News End -->
