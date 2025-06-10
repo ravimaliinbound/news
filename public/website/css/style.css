@@ -1,17 +1,17 @@
-
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
     transition: opacity .8s ease-out, visibility 0s linear .5s;
     z-index: 99999;
- }
+}
 
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
+#spinner.show {
+    transition: opacity .8s ease-out, visibility 0s linear .0s;
+    visibility: visible;
+    opacity: 1;
+}
+
 /*** Spinner End ***/
 
 .back-to-top {
@@ -121,7 +121,7 @@
     .sticky-top .top-link {
         display: none;
     }
-    
+
 }
 
 .topbar .top-link a {
@@ -149,8 +149,13 @@
 }
 
 @keyframes noteAnimate {
-    from {left: -735px;}
-    to {left: 735px;}
+    from {
+        left: -735px;
+    }
+
+    to {
+        left: 735px;
+    }
 }
 
 /*** Topbar End ***/
@@ -218,6 +223,7 @@
 #searchModal .modal-content {
     background: rgba(255, 255, 255, .8);
 }
+
 /*** Navbar End ***/
 
 
@@ -229,6 +235,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 /*** Features End ***/
 
 
@@ -249,11 +256,12 @@
     right: 0;
     opacity: 0.2;
 }
+
 /*** Top News End ***/
 
 
 /*** Latest News Start ***/
-.latest-news .latest-news-carousel.owl-carousel{
+.latest-news .latest-news-carousel.owl-carousel {
     position: relative;
 }
 
@@ -289,6 +297,7 @@
     color: var(--bs-white);
     border-radius: 10px;
 }
+
 /*** Latest News End ***/
 
 
@@ -329,9 +338,11 @@
     color: var(--bs-white);
     border-radius: 10px;
 }
-.left::placeholder{
+
+.left::placeholder {
     padding-left: 10px;
-}   
+}
+
 .populer-news .tab-class .nav-item a.active {
     background: var(--bs-primary) !important;
 }
@@ -351,16 +362,17 @@
 
 .lifestyle .lifestyle-item .lifestyle-content {
     position: absolute;
-    width: 100%; 
-    height: 100%; 
-    top: 0; 
-    left: 0; 
-    padding: 20px; 
-    display: flex; 
-    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
+
 /*** Whats New End ***/
 
 
@@ -383,6 +395,7 @@
     background: linear-gradient(rgba(26, 125, 255, 0.7), rgba(255, 255, 255, 0.7));
     z-index: 2;
 }
+
 /*** Banner Section End ***/
 
 
@@ -391,10 +404,12 @@
     background: var(--bs-white) !important;
     color: var(--bs-primary) !important;
 }
-.footer{
+
+.footer {
     background-color: rgb(240, 240, 240);
     /* color: black; */
 }
+
 .footer .footer-item-1 .line-h {
     line-height: 38px;
 }
@@ -430,7 +445,15 @@
 .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 /*** Footer End ***/
 
-
-
+/*** Login From ***/
+.login_form {
+    border: 1px solid grey;
+    padding: 30px;
+    border-radius: 5px;
+    width: 50%;
+    justify-content: center;
+    margin: 150px auto;
+}

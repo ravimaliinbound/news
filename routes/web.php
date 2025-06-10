@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('website.index');
@@ -23,6 +24,15 @@ Route::get('/science', function () {
 Route::get('/travel', function () {
     return view('website.travel');
 });
+
+Route::get('/profile',[UserController::class,'profile']);
+Route::get('/user-logout',[UserController::class,'user_logout']);
+
+Route::get('/login',[UserController::class,'create']);
+Route::post('/login',[UserController::class,'user_auth']);
+
+Route::get('/signup',[UserController::class,'signup']);
+Route::post('/signup',[UserController::class,'store']);
 
 /*
  * 404 view, for unknown route which is not defined
