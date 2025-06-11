@@ -55,9 +55,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|alpha:ascii',
-            'email' => 'required|email|unique:customers',
-            'password' => 'required|min:3|max:12',
+            'name' => 'required|alpha:ascii|min:3|max:15',
+            'email' => 'required|email|unique:news_users',
+            'password' => 'required|min:8|max:12',
+        ], [
+            'name.required' => 'Name field is required',
+            'email.required' => 'Email field is required',
+            'email.email' => 'Please enter a valid email',
+            'email.unique' => 'Email has already been taken',
+            'password.required' => 'Password field is required',
         ]);
 
         $data = new news_user;

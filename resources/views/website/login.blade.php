@@ -1,48 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('admin.layout.headers')
 
-<head>
-    <title>Login</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
-        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="{{url('website/img/logo.png')}}">
-    <link href="{{url('website/css/style.css')}}" rel="stylesheet">
-</head>
 
-<body>
-    <div class="container">
-        <form action="" class="login_form" method="post">
-            @csrf
-            <h2>Login Form</h2>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" value="{{old('email')}}" placeholder="Enter email"
-                    name="email">
+<div class="auth-main relative">
+    <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen">
+        <div class="auth-form flex items-center justify-center grow flex-col min-h-screen relative p-6 ">
+            <div class="w-full max-w-[350px] relative">
+                <div class="auth-bg ">
+                    <span
+                        class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
+                    <span
+                        class="absolute top-[150px] right-[-150px] w-5 h-5 block rounded-full bg-primary-500 animate-[floating_9s_infinite]"></span>
+                    <span
+                        class="absolute left-[-150px] bottom-[150px] w-5 h-5 block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
+                    <span
+                        class="absolute left-[-100px] bottom-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-2 animate-[floating_9s_infinite]"></span>
+                </div>
+                <div class="card sm:my-12  w-full shadow-none">
+                    <div class="card-body !p-10">
+                        <div class="text-center mb-8">
+                            <!-- <img src="{{url('admin/images/logo-dark.svg')}}" alt="img" class="mx-auto auth-logo" /> -->
+                        </div>
+                        <h4 class="text-center font-medium mb-4">Login</h4>
+                        <form action="" method="post">
+                            @csrf
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    value="{{old('email')}}" placeholder="Email Address" />
+                            </div>
+                            @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                            <div class="mb-4">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    value="{{old('password')}}" placeholder="Password" />
+                            </div>
+                            @error('password')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                            <div class="flex mt-1 justify-between items-center flex-wrap">
+                                <!-- <div class="form-check">
+                                    <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" />
+                                    <label class="form-check-label text-muted" for="customCheckc1">Remember
+                                        me</label>
+                                </div> -->
+                                <h6 class="font-normal text-primary-500 mb-0">
+                                    <!-- <a href="#"> Forgot Password? </a> -->
+                                </h6>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <button type="submit" class="btn btn-primary mx-auto shadow-2xl">Login</button>
+                            </div>
+                            <div class="flex justify-between items-end flex-wrap mt-4">
+                                <h6 class="font-medium mb-0">Don't have an Account?</h6>
+                                <a href="signup" class="text-primary-500">Create Account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            @error('email')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" value="{{old('password')}}"
-                    placeholder="Enter password" name="password">
-            </div>
-            <div class="checkbox">
-                <!-- <label><input type="checkbox" name="remember" value="remember"> Remember me</label> -->
-                <span class="pull-right">Don't have an account?
-                    <a href="signup" style="margin-left: 20px">Signup</a>
-                </span>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+        </div>
     </div>
-
-</body>
-
-</html>
+</div>
+<!-- [ Main Content ] end -->
+@include('admin.layout.footer')

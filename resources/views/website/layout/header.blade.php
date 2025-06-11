@@ -75,13 +75,6 @@
                             <?php
                             if (session()->get('user_id')) {
                                 ?>
-                            <a href="profile" class="nav-item nav-link" id="profile">Profile</a>
-                            <?php
-                            }           
-                            ?>
-                            <?php
-                            if (session()->get('user_id')) {
-                                ?>
                             <a href="user-logout" class="nav-item nav-link text-danger" onclick="confirm('Do you really want to logout?');" id="travel">Logout</a>
                             <?php
                             } else {

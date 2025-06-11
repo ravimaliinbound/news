@@ -1,47 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('admin.layout.headers')
 
-<head>
-    <title>Signup</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
-        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="{{url('website/img/logo.png')}}">
-    <link href="{{url('website/css/style.css')}}" rel="stylesheet">
-</head>
 
-<body>
-    <div class="container">
-        <form action="" class="login_form" method="post">
-            @csrf
-            <h2>Signup Form</h2>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+<div class="auth-main relative">
+    <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen">
+        <div class="auth-form flex items-center justify-center grow flex-col min-h-screen relative p-6 ">
+            <div class="w-full max-w-[350px] relative">
+                <div class="auth-bg ">
+                    <span
+                        class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
+                    <span
+                        class="absolute top-[150px] right-[-150px] w-5 h-5 block rounded-full bg-primary-500 animate-[floating_9s_infinite]"></span>
+                    <span
+                        class="absolute left-[-150px] bottom-[150px] w-5 h-5 block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
+                    <span
+                        class="absolute left-[-100px] bottom-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-2 animate-[floating_9s_infinite]"></span>
+                </div>
+                <div class="card sm:my-12  w-full shadow-none">
+                    <div class="card-body !p-10">
+                        <div class="text-center mb-8">
+                            <!-- <a href="#"><img src="../assets/images/logo-dark.svg" alt="img" class="mx-auto auth-logo"/></a> -->
+                        </div>
+                        <h4 class="text-center font-medium mb-4">Sign up</h4>
+                        <form action="" class="login_form" method="post">
+                            @csrf
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" id="name" value="{{old('name')}}"
+                                    placeholder="Enter name" name="name">
+                            </div>
+                            @error('name')
+                                <div class="text-danger mb-2">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group mb-2">
+                                <input type="email" class="form-control" id="email" value="{{old('email')}}"
+                                    placeholder="Enter email" name="email">
+                            </div>
+                            @error('email')
+                                <div class="text-danger mb-2">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group mb-2">
+                                <input type="password" class="form-control" id="password" value="{{old('password')}}"
+                                    placeholder="Enter password" name="password">
+                            </div>
+                            @error('password')
+                                <div class="text-danger mb-2">{{ $message }}</div>
+                            @enderror
+                            <div class="checkbox mb-4">
+                                <!-- <label><input type="checkbox" name="remember"> Remember me</label> -->
+
+                            </div>
+                            <div class="mt-4 text-center mb-4">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            <span class="pull-right">Already have an account?
+                                <a href="login" style="margin-left: 20px" class="text-primary-500">Login</a>
+                            </span>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-            </div>
-            <div class="checkbox">
-                <!-- <label><input type="checkbox" name="remember"> Remember me</label> -->
-                <span class="pull-right">Already have an account?
-                    <a href="login" style="margin-left: 20px">Login</a>
-                </span>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
-
-</body>
-
-</html>
+</div>
+<!-- [ Main Content ] end -->
+@include('admin.layout.footer')

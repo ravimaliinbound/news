@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2025 at 11:17 AM
+-- Generation Time: Jun 11, 2025 at 04:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -131,27 +131,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(7, '2025_06_05_101753_create_customers_table', 2),
-(8, '2025_06_10_053751_craete_news_users_table', 2),
-(9, '2025_06_10_081100_craete_news_admins_table', 3),
-(10, '2025_06_10_084805_craete_news_table', 4);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news`
---
-
-CREATE TABLE `news` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `admin_id` int(10) UNSIGNED NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `category` enum('technology','business','entertainment','science','travel') NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+(4, '2025_06_05_101753_create_customers_table', 1),
+(5, '2025_06_10_053751_craete_news_users_table', 1),
+(6, '2025_06_10_081100_craete_news_admins_table', 1),
+(7, '2025_06_11_041405_craete_news_posts_table', 1);
 
 -- --------------------------------------------------------
 
@@ -167,6 +150,51 @@ CREATE TABLE `news_admins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news_admins`
+--
+
+INSERT INTO `news_admins` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'Ravi Mali', 'ravi@gmail.com', 'o7ciV8xuzURGGPOu62G4eYn7S9OjOfLfOLam1xRsBEgXOtIkM8GW', '2025-06-17 08:23:22', '2025-06-11 11:09:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_posts`
+--
+
+CREATE TABLE `news_posts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `admin_id` bigint(20) UNSIGNED NOT NULL,
+  `heading` varchar(255) NOT NULL,
+  `category` enum('technology','business','entertainment','science','travel') NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news_posts`
+--
+
+INSERT INTO `news_posts` (`id`, `admin_id`, `heading`, `category`, `description`, `image`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Rs 4,228 For Grocery Bag?', 'business', 'An everyday cotton bag familiar to most Indian households is now being sold as a high-end \"souvenir\" on the US luxury retail platform Nordstrom - and it\'s priced at a whopping Rs 4,228 ($48).', '1749633611_img.png', '2025-06-11 03:50:11', '2025-06-11 03:50:11'),
+(2, 1, 'Crypto prices today: Bitcoin tops $110,500; Ethereum, Altcoins rally up to 11% ahead of US inflation data', 'business', 'Bitcoin\'s price surge, fueled by corporate treasury investments, may face a potential market risk. A new analysis indicates that a mass corporate sell-off could be triggered.', '1749637435_img.jpg', '2025-06-11 04:53:55', '2025-06-11 04:53:55'),
+(3, 1, 'India-U.S. trade pact: Officials discuss market access, digital trade, customs facilitation', 'business', 'India and the U.S. teams discussed issues pertaining to market access, digital trade, and customs facilitation during the week-long deliberations on the proposed bilateral trade agreement, an official said.', '1749640788_img.jpg', '2025-06-11 05:49:48', '2025-06-11 05:49:48'),
+(4, 1, 'Musk says he regrets some posts he made about Trump', 'business', 'Billionaire Elon Musk said on Wednesday (June 11, 2025) that he regrets some of the posts he made last week about U.S. President Donald Trump, in a message on his social media platform X.', '1749640856_img.jpg', '2025-06-11 05:50:56', '2025-06-11 05:50:56'),
+(5, 1, 'U.S., China say they have agreed on framework to resolve their trade disputes', 'business', 'Senior U.S. and Chinese negotiators agree on trade framework after disputes, aiming to resolve issues and restore truce', '1749640932_img.jpg', '2025-06-11 05:52:12', '2025-06-11 05:52:12'),
+(6, 1, 'World Bank cuts India’s FY26 growth forecast to 6.3% on subdued exports, investments', 'business', 'The World Bank has cut its growth forecast for India to 6.3% in the current financial year 2025-26 from the 6.7% it had projected in January, citing dampened export and investment growth.', '1749641024_img.jpg', '2025-06-11 05:53:44', '2025-06-11 05:53:44'),
+(7, 1, 'OpenAI rolls out o3-pro model; CEO Sam Altman says open-weights model needs more time', 'technology', 'OpenAI announced that its o3-pro model was rolling out to users, but CEO Sam Altman noted that an upcoming open weight model would not release this month.', '1749641208_img.jpg', '2025-06-11 05:56:48', '2025-06-11 05:56:48'),
+(8, 1, 'Google rolls out Android 16 to supported Pixel devices', 'technology', 'Google announced the rollout of its Android 16 version, with the update first coming to supported Pixel devices before coming to other phone brands later in the year.', '1749641288_img.jpg', '2025-06-11 05:58:08', '2025-06-11 05:58:08'),
+(9, 1, 'France\'s Mistral unveils its first \'reasoning\' AI model', 'technology', 'French artificial intelligence startup Mistral on Tuesday announced a so-called \"reasoning\" model it said was capable of working through complex problems, following in the footsteps of top US developers.', '1749641460_img.jpg', '2025-06-11 06:01:00', '2025-06-11 06:01:00'),
+(10, 1, '‘Devika & Danny’ review: Ritu Varma impresses', 'entertainment', 'In the first few minutes of the Telugu web series Devika & Danny, streaming on Jio Hotstar, Devika Nandan (Ritu Varma) discloses that she has lived her life within a 25-kilometre radius. She teaches music at a nearby village and is the sort of young woman', '1749641676_img.webp', '2025-06-11 06:04:36', '2025-06-11 06:04:36'),
+(11, 1, 'Mobile vs. Desktop Casino: Where Should You Really Play?', 'entertainment', 'Online casinos are everywhere now. Whether you’re chilling on your couch or sneaking a spin during lunch break, the digital poker table is always within reach. But one question keeps popping up for both seasoned players and curious newcomers.', '1749644028_img.webp', '2025-06-11 06:43:48', '2025-06-11 06:43:48'),
+(12, 1, 'What is a Naturopathic Doctor?', 'science', 'As you seek medical care, you may have considered a number of specialists who might address the systems in your body. However, you may not be aware of which specialist to visit or what they can do for you.', '1749644642_img.webp', '2025-06-11 06:54:02', '2025-06-11 06:54:02'),
+(13, 1, 'Pain Management Billing: Best Practices for Accuracy', 'science', 'Pain management is one of the most complex specialties in healthcare billing. With procedures ranging from epidural injections to spinal cord stimulators, accurate coding and strict compliance are vital.', '1749646048_img.webp', '2025-06-11 07:17:28', '2025-06-11 07:17:28'),
+(14, 1, 'How to Book a Perfect Airport Transfer in New York', 'travel', 'New York hits you fast—horns blaring, crowds shoving, and that wild energy pulsing through every street. Landing at JFK.', '1749646137_img.webp', '2025-06-11 07:18:57', '2025-06-11 07:18:57'),
+(15, 1, 'How to Travel to Bhutan Without a Passport: A Guide for Indian Tourists', 'travel', 'Did you know Bhutan is called “The Land of Thunder Dragon”? That’s why they say “Druk Yul la chin shuk su shuk,” which means “Welcome to the land of thunder dragon.”', '1749646468_img.webp', '2025-06-11 07:24:28', '2025-06-11 07:24:28');
 
 -- --------------------------------------------------------
 
@@ -188,9 +216,8 @@ CREATE TABLE `news_users` (
 --
 
 INSERT INTO `news_users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Kamlesh', 'kamlesh@gmail.com', '$2y$12$k.kXTOvcfWULC6U2tx3JeuNwA7H/FwexmvdP392y7sRXR.NULtOKG', '2025-06-10 00:19:09', '2025-06-10 00:19:09'),
-(2, 'Ravi', 'ravi@gmail.com', '$2y$12$9nh5kFUVuCtoaJa5FDaabuMQHq9he.kWnDOSY6NZYPvldoT2GOuxq', '2025-06-10 02:27:02', '2025-06-10 02:27:02'),
-(3, 'Vikram', 'vikram@gmail.com', '$2y$12$y4D/4TvDXKqzvSFDq4CYBuaJPQ4Q0nWaHYBh9Xd35fQ9w075YLZD.', '2025-06-10 02:28:27', '2025-06-10 02:28:27');
+(1, 'Ravi', 'ravi@gmail.com', '$2y$12$ESTJhsMqM.EzoP15z8NA9eSsFV3xiGuOcXaUnD9VWt1K8KiivIeLS', '2025-06-11 01:14:01', '2025-06-11 01:14:01'),
+(2, 'Kamlesh', 'kamlesh@gmail.com', '$2y$12$/o7ciV8xuzURGGPOu62G4eYn7S9OjOfLfOLam1xRsBEgXOtIkM8GW', '2025-06-11 02:40:36', '2025-06-11 02:40:36');
 
 -- --------------------------------------------------------
 
@@ -224,7 +251,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('nuIrIWR6439fyrEvpmQjshqmbHMhogrOdPm2nPc4', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiNXFBMlRrdzVkaWw0N3pMM3d4SWR5b0ZaTGlRNkszYUh3cTlsTlNTVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NzoidXNlcl9pZCI7aToyO3M6NToiZW1haWwiO3M6MTQ6InJhdmlAZ21haWwuY29tIjtzOjQ6Im5hbWUiO3M6NDoiUmF2aSI7fQ==', 1749546570);
+('y6U0dXb6FhnXkcu21Vx4eyXDn4P4ec32yosLJBKF', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiVHlQM0FWNndGSEZ3d2lOaTYyQXFJS0JGS2JZVE9rdXhtTlp5eVZRbyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmF2ZWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjc6InVzZXJfaWQiO2k6MTtzOjU6ImVtYWlsIjtzOjE0OiJyYXZpQGdtYWlsLmNvbSI7czo0OiJuYW1lIjtzOjQ6IlJhdmkiO30=', 1749650409);
 
 -- --------------------------------------------------------
 
@@ -292,16 +319,17 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `news_admins`
 --
 ALTER TABLE `news_admins`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news_posts`
+--
+ALTER TABLE `news_posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `news_posts_admin_id_foreign` (`admin_id`);
 
 --
 -- Indexes for table `news_users`
@@ -356,31 +384,41 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `news`
---
-ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `news_admins`
 --
 ALTER TABLE `news_admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `news_posts`
+--
+ALTER TABLE `news_posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `news_users`
 --
 ALTER TABLE `news_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `news_posts`
+--
+ALTER TABLE `news_posts`
+  ADD CONSTRAINT `news_posts_admin_id_foreign` FOREIGN KEY (`admin_id`) REFERENCES `news_admins` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

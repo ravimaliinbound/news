@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\news_admin;
+use App\Models\news_post;
 
 use Illuminate\Http\Request;
 
@@ -20,7 +20,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        $data = news_post::all()->skip(0)->take(8);
+        return view('website.index', ['news' => $data]);
     }
 
     /**
@@ -28,27 +29,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-         $validated = $request->validate([
-            'heading' => 'required|alpha:ascii',
-            'description' => 'required',
-            'price' => 'required|',
-            'image' => 'required|image|max:2048'
-        ]);
-        $data = new news_admin();
-
-        $data->name = $request->name;
-        $data->description = $request->description;
-        $data->price = $request->price;
-        $file = $request->file('image');
-        $filename = time() . "_img." . $request->file('image')->getClientOriginalExtension();
-        $file->move('website/upload/product/', $filename);
-        $data->image = $filename;
-
-        $data->save();
-        echo "<script>
-        alert('News Inserted Success !');
-        window.location='/insert_news';
-        </script>";
+        //
     }
 
     /**
