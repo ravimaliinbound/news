@@ -39,6 +39,11 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- CKeditor CDNs -->
+    <link rel="stylesheet"
+        href="https://cdn.ckeditor.com/ckeditor5-premium-features/45.2.0/ckeditor5-premium-features.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5-premium-features/45.2.0/ckeditor5-premium-features.umd.js"></script>
+
 </head>
 <!-- [Head] end -->
 <!-- [Body] Start -->

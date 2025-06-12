@@ -62,5 +62,6 @@ Route::post('/admin-login',[AdminController::class,'admin_auth']);
 
 Route::get('/insert-news',[NewsPostController::class,'create']);
 Route::post('/insert-news',[NewsPostController::class,'store']);
+Route::post('/upload',[NewsPostController::class,'uploadImage'])->name('ckeditor.upload');
 
 Route::get('/manage-news',[NewsPostController::class,'manage_news']);

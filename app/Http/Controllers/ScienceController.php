@@ -19,8 +19,8 @@ class ScienceController extends Controller
      */
     public function create()
     {
-        $data = news_post::where('category', 'like', 'science')->get();
-        $allData = news_post::all()->skip(0)->take(3);
+        $data = news_post::where('category', 'like', 'science')->get()->sortByDesc('id');
+        $allData = news_post::all()->sortByDesc('id')->skip(0)->take(4);
         return view('website.science', ['science' => $data], ['all_news' => $allData]);
     }
 

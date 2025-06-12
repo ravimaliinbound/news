@@ -19,8 +19,8 @@ class EntertainmentController extends Controller
      */
     public function create()
     {
-        $data = news_post::where('category', 'like', 'entertainment')->get();
-        $allData = news_post::all()->skip(4)->take(4);
+        $data = news_post::where('category', 'like', 'entertainment')->get()->sortByDesc('id');
+        $allData = news_post::all()->sortByDesc('id')->skip(4)->take(4);
         return view('website.entertainment', ['entertainment' => $data], ['all_news' => $allData]);
     }
 

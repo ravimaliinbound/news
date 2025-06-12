@@ -5,14 +5,15 @@
             <div class="row g-4">
                 <div class="col-lg-12 text-center">
                     <a href="#" class="d-flex flex-column flex-wrap">
-                        <p class="text-primary mb-0 display-6">Newsers</p>
-                        <small class="text-secondary py-2" style="letter-spacing: 11px; line-height: 0; margin-left: 10px;">Newspaper</small>
+                        <p class="text-primary mb-0 display-6">Taza Khabar</p>
+                        <small class="text-secondary py-2"
+                            style="letter-spacing: 11px; line-height: 0;">Newspaper</small>
                     </a>
                 </div>
             </div>
         </div>
         <div class="row g-5">
-            <div class="col-lg-6 col-xl-3">
+            <div class="col-lg-4 col-xl-4">
                 <div class="footer-item-1">
                     <h4 class="mb-4 text-dark">Get In Touch</h4>
                     <p class="text-secondary line-h">Address: <span class="text-dark">1203 Shilp Zaveri, Shyamal Cross
@@ -32,51 +33,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="footer-item-2">
-                    <div class="d-flex flex-column mb-4">
-                        <h4 class="mb-4 text-dark">Recent Posts</h4>
-                        <a href="#">
-                            <div class="d-flex align-items-center">
-                                <div class="rounded-circle border border-2 border-primary overflow-hidden">
-                                    <img src="{{url('website/img/footer-1.jpg')}}"
-                                        class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <div class="d-flex flex-column ps-4">
-                                    <p class="text-uppercase text-dark mb-3">Life Style</p>
-                                    <a href="#" class="h6 text-dark">
-                                        Get the best speak market, news.
-                                    </a>
-                                    <small class="text-dark d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
-                                        2025</small>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <a href="#">
-                            <div class="d-flex align-items-center">
-                                <div class="rounded-circle border border-2 border-primary overflow-hidden">
-                                    <img src="{{url('website/img/footer-2.jpg')}}"
-                                        class="img-zoominimg-fluid rounded-circle w-100" alt="">
-                                </div>
-                                <div class="d-flex flex-column ps-4">
-                                    <p class="text-uppercase text-dark mb-3">Sports</p>
-                                    <a href="#" class="h6 text-dark">
-                                        Get the best speak market, news.
-                                    </a>
-                                    <small class="text-dark d-block"><i class="fas fa-calendar-alt me-1"></i> June 2,
-                                        2025</small>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
+            <div class="col-lg-4 col-xl-4">
                 <div class="d-flex flex-column text-start footer-item-3">
                     <h4 class="mb-4 text-dark">Categories</h4>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i> Technology</a>
+                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                        Technology</a>
                     <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
                         Business</a>
                     <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
@@ -89,7 +50,7 @@
                         Travel</a>
                 </div>
             </div>
-            <div class="col-lg-6 col-xl-3">
+            <div class="col-lg-4 col-xl-4">
                 <div class="footer-item-4">
                     <h4 class="mb-4 text-dark">Our Gallary</h4>
                     <div class="row g-2">

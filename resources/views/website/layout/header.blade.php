@@ -55,8 +55,8 @@
             <div class="container px-0">
                 <nav class="navbar navbar-light navbar-expand-xl">
                     <a href="index" class="navbar-brand mt-3">
-                        <p class="text-primary display-6 mb-2" style="line-height: 0;">Newsers</p>
-                        <small class="text-body fw-normal" style="letter-spacing: 12px;">Newspaper</small>
+                        <p class="text-primary display-6 mb-2" style="line-height: 0;">Taza Khabar</p>
+                        <small class="text-body fw-normal" style="letter-spacing: 18px;">Newspaper</small>
                         <!-- <img src="{{url('website/img/logo.png')}}" alt="" height="77px"> -->
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"

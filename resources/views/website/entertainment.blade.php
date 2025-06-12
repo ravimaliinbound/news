@@ -29,7 +29,10 @@
 
                                 </small>
                             </div>
-                            <p class="mt-3 mb-4">{{$ent->description}}</p>
+                            <p class="mt-3 mb-4" id="ent_descr">{{$ent->description}}</p>
+                            <!-- @php
+                                    $desc = $ent->description;
+                                @endphp -->
                         </div>
                     @endforeach
                 </div>
@@ -65,6 +68,9 @@
 
 <script>
     $(document).ready(function () {
+        // var desc = '<?php echo $desc; ?>';
+        // $("#ent_descr").html(desc)
+        // console.log(desc)
         $("#entertainment").addClass('active');
     });
 </script>

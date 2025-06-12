@@ -20,7 +20,12 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $data = news_post::all()->skip(0)->take(8);
+        // showing news in random order
+        // $data = news_post::all()->skip(0)->take(8)->sortBy(function ($item) {
+        //     return rand();
+        // });
+
+        $data = news_post::all()->sortByDesc('id')->skip(0)->take(8);
         return view('website.index', ['news' => $data]);
     }
 

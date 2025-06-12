@@ -20,8 +20,8 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        $data = news_post::where('category', 'like', 'technology')->get();
-        $allData = news_post::all()->skip(0)->take(8);
+        $data = news_post::where('category', 'like', 'technology')->get()->sortByDesc('id');
+        $allData = news_post::all()->sortByDesc('id')->skip(0)->take(8);
         return view('website.technology', ['technology' => $data], ['all_news' => $allData]);
     }
 

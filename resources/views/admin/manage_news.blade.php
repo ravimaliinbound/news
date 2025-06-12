@@ -16,13 +16,10 @@
                                 <tr class="unread">
                                     <td>Sr. No.</td>
                                     <td>Headline</td>
+                                    <td>Category</td>
                                     <td>Description</td>
                                     <td>Image</td>
                                     <td>Action</td>
-                                    <!-- <td>
-                                        <a href="#!" class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                        <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                    </td> -->
                                 </tr>
                                 @php $sl = 1; @endphp
                                 @foreach ($news as $n)
@@ -30,6 +27,7 @@
                                     <tr class="unread">
                                         <td>{{ $sl }}</td>
                                         <td style="width: 50px">{{ $n->heading }}</td>
+                                        <td>{{ $n->category }}</td>
                                         <td>ravi@gmail.com</td>
                                         <td>
                                             <img style="width: 50px" src="{{url('admin/upload/news/' . $n->image . '')}}"

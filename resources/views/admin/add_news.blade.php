@@ -1,35 +1,32 @@
-@include('admin.layout.headers')
-<div class="auth-main relative">
-    <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen">
-        <div class="auth-form flex items-center justify-center grow flex-col min-h-screen relative p-6 ">
-            <div class="w-full max-w-[350px] relative">
-                <div class="auth-bg ">
-                    <span
-                        class="absolute top-[-100px] right-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
-                    <span
-                        class="absolute top-[150px] right-[-150px] w-5 h-5 block rounded-full bg-primary-500 animate-[floating_9s_infinite]"></span>
-                    <span
-                        class="absolute left-[-150px] bottom-[150px] w-5 h-5 block rounded-full bg-theme-bg-1 animate-[floating_7s_infinite]"></span>
-                    <span
-                        class="absolute left-[-100px] bottom-[-100px] w-[300px] h-[300px] block rounded-full bg-theme-bg-2 animate-[floating_9s_infinite]"></span>
+@include('admin.layout.header')
+
+<!-- [ Main Content ] start -->
+<div class="pc-container">
+    <div class="pc-content">
+        <!-- [ Main Content ] start -->
+        <div class="col-span-12 xl:col-span-8 md:col-span-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Post News</h5>
                 </div>
-                <div class="card sm:my-12  w-full shadow-none">
+                <div class="card-body">
                     <div class="card-body !p-10">
-                        <div class="text-center mb-8">
-                            <!-- <a href="#"><img src="../assets/images/logo-dark.svg" alt="img" class="mx-auto auth-logo"/></a> -->
-                        </div>
                         <h4 class="text-center font-medium mb-4">Post News</h4>
                         <form action="" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-2">
-                                <input type="text" class="form-control" id="heading" value="{{old('heading')}}"
-                                    placeholder="Enter headline" name="heading">
+                                <label for="heading" class="text-dark"
+                                    style="font-weight: 600; font-size : 18px">Title</label>
+                                <input type="text" class="form-control mt-2" id="heading" value="{{old('heading')}}"
+                                    placeholder="Enter title" name="heading">
                             </div>
                             @error('heading')
                                 <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="form-group mb-2">
-                                <select name="category" id="category" class="form-control" name="category">
+                                <label for="category" class="text-dark"
+                                    style="font-weight: 600; font-size : 18px">Category</label>
+                                <select name="category" id="category" class="form-control mt-2" name="category">
                                     <option value="">Select Category</option>
                                     <option value="technology">Technology</option>
                                     <option value="business">Business</option>
@@ -41,18 +38,13 @@
                             @error('category')
                                 <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
-                            <div class="form-group mb-2">
-                                <input type="text" class="form-control" id="description" value="{{old('description')}}"
-                                    placeholder="Enter description" name="description">
+                            <label for="editor" class="text-dark"
+                                style="font-weight: 600; font-size : 18px">Description</label>
+                            <div class="form-group mt-2">
+                                <textarea class="form-control" id="editor"
+                                    placeholder="Enter description" name="description">{{old('description')}}</textarea>
                             </div>
                             @error('description')
-                                <div class="text-danger mb-2">{{ $message }}</div>
-                            @enderror
-                            <div class="form-group mb-2">
-                                <input type="file" class="form-control" id="image" value="{{old('image')}}"
-                                    name="image">
-                            </div>
-                             @error('image')
                                 <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="mt-4 text-center mb-4">
@@ -64,7 +56,28 @@
                 </div>
             </div>
         </div>
+        <!-- [ Main Content ] end -->
     </div>
 </div>
 <!-- [ Main Content ] end -->
+
+<!-- CKeditor CDNs -->
+
+<script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: "{{ route('ckeditor.upload') . '?_token=' . csrf_token() }}"
+            }
+        })
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
+
 @include('admin.layout.footer')

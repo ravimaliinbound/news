@@ -1,4 +1,3 @@
-
 <!-- Required Js -->
 <script src="{{url('admin/js/plugins/simplebar.min.js')}}"></script>
 <script src="{{url('admin/js/plugins/popper.min.js')}}"></script>

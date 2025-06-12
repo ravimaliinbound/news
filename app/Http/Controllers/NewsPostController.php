@@ -33,11 +33,12 @@ class NewsPostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validated = $request->validate([
-            'heading' => 'required|max:60',
+            'heading' => 'required',
             'category' => 'required',
-            'description' => 'required',
-            'image' => 'required|image|max:2048'
+            'description' => 'required'
+            // 'image' => 'required|image'
         ]);
         $data = new news_post();
 
@@ -45,10 +46,10 @@ class NewsPostController extends Controller
         $data->heading = $request->heading;
         $data->category = $request->category;
         $data->description = $request->description;
-        $file = $request->file('image');
-        $filename = time() . "_img." . $request->file('image')->getClientOriginalExtension();
-        $file->move('admin/upload/news/', $filename);
-        $data->image = $filename;
+        // $file = $request->file('upload');
+        // $filename = time() . "_img." . $request->file('upload')->getClientOriginalExtension();
+        // $file->move('admin/upload/news/', $filename);
+        // $data->image = $filename;
 
         $data->save();
         echo "<script>
@@ -56,7 +57,17 @@ class NewsPostController extends Controller
         window.location='/insert-news';
         </script>";
     }
-
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('upload')) {
+            $file = $request->file('upload');
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $filename = time() . "_img." . $extension;
+            $file->move('admin/upload/news/', $filename);
+            $url = ('admin/upload/news/' . $filename);
+            return response()->json(['filename' => $filename, 'uploaded' => 1, 'url' => $url]);
+        }
+    }
     /**
      * Display the specified resource.
      */
