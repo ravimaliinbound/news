@@ -29,6 +29,7 @@ Route::get('/404', function () {
 
 Route::get('/',[NewsController::class,'create']);
 Route::get('/index',[NewsController::class,'create']);
+Route::get('/show_news/{id}',[NewsController::class,'show_news']);
 
 Route::get('/technology',[TechnologyController::class,'create']);
 

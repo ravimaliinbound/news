@@ -10,42 +10,29 @@
             <p class="mt-3 mb-4">All news about the web are published on this page.</p>
         </div>
         <div class="row g-4 my-3">
-            <div class="col-lg-7 col-xl-8 mt-0">
-                <div class="row">
-                    @foreach ($news as $n)
-                        <div class="col-lg-6">
-                            <a href="show_news/{{$n->id}}">
-                                <div class="position-relative overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{url('admin/upload/news/' . $n->image . '')}}"
-                                        alt="activity-user" />
-                                </div>
-                                <div class="py-3">
-                                    <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
-                                    <big>
-                                        <a href="show_news/{{$n->id}}">
-                                            <b>
-                                                <p class="text-dark mb-0 link-hover">{{$n->heading}}</p>
-                                            </b>
-                                        </a>
-                                    </big>
-                                    <small>
-
-                                    </small>
-                                </div>
-                                <p class="mt-3 mb-4">{{$n->description}}</p>
-                            </a>
-                        </div>
-                    @endforeach
+            <div class="col-lg-8 col-xl-8 mt-0">
+                <div class="position-relative overflow-hidden ">
+                    <img class="img-fluid  w-100" src="{{url('admin/upload/news/' . $news->image . '')}}"
+                        alt="activity-user" />
                 </div>
+                <div class="py-3">
+                    <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$news->category}}</a>
+                    <big>
+                        <b>
+                            <p class="text-dark mb-0 link-hover">{{$news->heading}}</p>
+                        </b>
+                    </big>
+                </div>
+                <p class="mt-3 mb-4">{{$news->description}}</p>
             </div>
             <div class="col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 pt-0">
                     <div class="row g-4">
-                        @foreach($news as $n)
+                        @foreach($newses as $n)
                             <div class="col-12">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-5">
-                                        <a href="show_news/{{$n->id}}">
+                                        <a href="{{$n->id}}">
                                             <div class="overflow-hidden">
                                                 <img src="{{url('admin/upload/news/' . $n->image . '')}}"
                                                     class="img-fluid w-100" alt="">
@@ -54,7 +41,7 @@
                                     </div>
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
-                                            <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
+                                            <a href="{{$n->id}}" class="h6">{{$n->heading}}</a>
                                             <small>June 4, 2025 </small>
                                         </div>
                                     </div>
@@ -69,10 +56,5 @@
 </div>
 <!-- Main Post Section End -->
 
-<script>
-    $(document).ready(function () {
-        $("#home").addClass('active');
-    });
-</script>
 <!-- Most Populer News End -->
 @includeIf('website.layout.footer')

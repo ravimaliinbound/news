@@ -14,25 +14,26 @@
                 <div class="row">
                     @foreach ($entertainment as $ent)
                         <div class="col-lg-6">
-                            <div class="position-relative overflow-hidden rounded">
-                                <img class="img-fluid rounded img-zoomin w-100"
-                                    src="{{url('admin/upload/news/' . $ent->image . '')}}" alt="activity-user" />
-                            </div>
+                            <a href="show_news/{{$ent->id}}">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid w-100"
+                                        src="{{url('admin/upload/news/' . $ent->image . '')}}" alt="activity-user" />
+                                </div>
+                            </a>
                             <div class="py-3">
                                 <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$ent->category}}</a>
                                 <big>
-                                    <b>
-                                        <p class="text-dark mb-0 link-hover">{{$ent->heading}}</p>
-                                    </b>
+                                    <a href="show_news/{{$ent->id}}">
+                                        <b>
+                                            <p class="text-dark mb-0 link-hover">{{$ent->heading}}</p>
+                                        </b>
+                                    </a>
                                 </big>
                                 <small>
 
                                 </small>
                             </div>
                             <p class="mt-3 mb-4" id="ent_descr">{{$ent->description}}</p>
-                            <!-- @php
-                                    $desc = $ent->description;
-                                @endphp -->
                         </div>
                     @endforeach
                 </div>
@@ -40,18 +41,20 @@
             <div class="col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 pt-0">
                     <div class="row g-4">
-                        @foreach($all_news as $b)
+                        @foreach($all_news as $n)
                             <div class="col-12">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-5">
-                                        <div class="overflow-hidden rounded">
-                                            <img src="{{url('admin/upload/news/' . $b->image . '')}}"
-                                                class="img-zoomin img-fluid rounded w-100" alt="">
-                                        </div>
+                                        <a href="show_news/{{$n->id}}">
+                                            <div class="overflow-hidden">
+                                                <img src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                                    class="img-fluid w-100" alt="">
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
-                                            <a href="#" class="h6">{{$b->heading}}</a>
+                                            <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
                                             <small>June 4, 2025 </small>
                                         </div>
                                     </div>
@@ -68,9 +71,6 @@
 
 <script>
     $(document).ready(function () {
-        // var desc = '<?php echo $desc; ?>';
-        // $("#ent_descr").html(desc)
-        // console.log(desc)
         $("#entertainment").addClass('active');
     });
 </script>

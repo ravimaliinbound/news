@@ -41,8 +41,8 @@
                             <label for="editor" class="text-dark"
                                 style="font-weight: 600; font-size : 18px">Description</label>
                             <div class="form-group mt-2">
-                                <textarea class="form-control" id="editor"
-                                    placeholder="Enter description" name="description">{{old('description')}}</textarea>
+                                <textarea class="form-control" id="editor" placeholder="Enter description"
+                                    name="description">{{old('description')}}</textarea>
                             </div>
                             @error('description')
                                 <div class="text-danger mb-2">{{ $message }}</div>

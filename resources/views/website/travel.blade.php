@@ -14,16 +14,20 @@
                 <div class="row">
                     @foreach ($travel as $tr)
                         <div class="col-lg-6">
-                            <div class="position-relative overflow-hidden rounded">
-                                <img class="img-fluid rounded img-zoomin w-100"
-                                    src="{{url('admin/upload/news/' . $tr->image . '')}}" alt="activity-user" />
-                            </div>
+                            <a href="show_news/{{$tr->id}}">
+                                <div class="position-relative overflow-hidden">
+                                    <img class="img-fluid w-100"
+                                        src="{{url('admin/upload/news/' . $tr->image . '')}}" alt="activity-user" />
+                                </div>
+                            </a>
                             <div class="py-3">
                                 <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$tr->category}}</a>
                                 <big>
-                                    <b>
-                                        <p class="text-dark mb-0 link-hover">{{$tr->heading}}</p>
-                                    </b>
+                                    <a href="show_news/{{$tr->id}}">
+                                        <b>
+                                            <p class="text-dark mb-0 link-hover">{{$tr->heading}}</p>
+                                        </b>
+                                    </a>
                                 </big>
                                 <small>
 
@@ -37,18 +41,20 @@
             <div class="col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 pt-0">
                     <div class="row g-4">
-                        @foreach($all_news as $b)
+                        @foreach($all_news as $n)
                             <div class="col-12">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-5">
-                                        <div class="overflow-hidden rounded">
-                                            <img src="{{url('admin/upload/news/' . $b->image . '')}}"
-                                                class="img-zoomin img-fluid rounded w-100" alt="">
-                                        </div>
+                                        <a href="show_news/{{$n->id}}">
+                                            <div class="overflow-hidden">
+                                                <img src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                                    class="img-fluid w-100" alt="">
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
-                                            <a href="#" class="h6">{{$b->heading}}</a>
+                                            <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
                                             <small>June 4, 2025 </small>
                                         </div>
                                     </div>

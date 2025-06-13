@@ -65,12 +65,12 @@
                     </button>
                     <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                         <div class="navbar-nav mx-auto border-top ">
-                            <a href="index" class="nav-item nav-link" id="home">News</a>
-                            <a href="technology" class="nav-item nav-link" id="technology">Technology</a>
-                            <a href="business" class="nav-item nav-link" id="business">Business</a>
-                            <a href="entertainment" class="nav-item nav-link" id="entertainment">Entertainment</a>
-                            <a href="science" class="nav-item nav-link" id="science">Science / Health</a>
-                            <a href="travel" class="nav-item nav-link" id="travel">Travel</a>
+                            <a href="/index" class="nav-item nav-link" id="home">News</a>
+                            <a href="/technology" class="nav-item nav-link" id="technology">Technology</a>
+                            <a href="/business" class="nav-item nav-link" id="business">Business</a>
+                            <a href="/entertainment" class="nav-item nav-link" id="entertainment">Entertainment</a>
+                            <a href="/science" class="nav-item nav-link" id="science">Science / Health</a>
+                            <a href="/travel" class="nav-item nav-link" id="travel">Travel</a>
 
                             <?php
                             if (session()->get('user_id')) {

@@ -23,10 +23,18 @@ class NewsController extends Controller
         // showing news in random order
         // $data = news_post::all()->skip(0)->take(8)->sortBy(function ($item) {
         //     return rand();
-        // });
+        // });  
 
         $data = news_post::all()->sortByDesc('id')->skip(0)->take(8);
         return view('website.index', ['news' => $data]);
+    }
+    public function show_news(Request $request, $id)
+    {
+        $data = news_post::where('id', $id)->first();
+
+        $dataa = news_post::all()->sortByDesc('id')->skip(0)->take(6);
+
+        return view('website.show_news', ['news' => $data], ['newses' => $dataa]);
     }
 
     /**
