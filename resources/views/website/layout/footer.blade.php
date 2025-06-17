@@ -36,17 +36,17 @@
             <div class="col-lg-4 col-xl-4">
                 <div class="d-flex flex-column text-start footer-item-3">
                     <h4 class="mb-4 text-dark">Categories</h4>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/technology"><i class="fas fa-angle-right text-dark me-2"></i>
                         Technology</a>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/business"><i class="fas fa-angle-right text-dark me-2"></i>
                         Business</a>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/entertainment"><i class="fas fa-angle-right text-dark me-2"></i>
                         Entertainment</a>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/science"><i class="fas fa-angle-right text-dark me-2"></i>
                         Science</a>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/science"><i class="fas fa-angle-right text-dark me-2"></i>
                         Health</a>
-                    <a class="btn-link text-dark" href=""><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/travel"><i class="fas fa-angle-right text-dark me-2"></i>
                         Travel</a>
                 </div>
             </div>

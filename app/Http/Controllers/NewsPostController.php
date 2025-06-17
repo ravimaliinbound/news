@@ -46,6 +46,7 @@ class NewsPostController extends Controller
         $data->heading = $request->heading;
         $data->category = $request->category;
         $data->description = $request->description;
+        $data->date = date('F d, Y');
         // $file = $request->file('upload');
         // $filename = time() . "_img." . $request->file('upload')->getClientOriginalExtension();
         // $file->move('admin/upload/news/', $filename);

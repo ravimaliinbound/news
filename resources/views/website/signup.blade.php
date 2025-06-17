@@ -54,6 +54,8 @@
                             <span class="pull-right">Already have an account?
                                 <a href="login" style="margin-left: 20px" class="text-primary-500">Login</a>
                             </span>
+                            <br><br>
+                            <a href="/index" class="text-primary-500">Back</a>
                         </form>
                     </div>
                 </div>

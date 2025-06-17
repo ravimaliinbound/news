@@ -25,7 +25,7 @@ class BusinessController extends Controller
     {
         $data = news_post::where('category', 'like', 'business')->get()->sortByDesc('id');
         $allData = news_post::all()->sortByDesc('id')->skip(0)->take(8);
-        return view('website.business', ['business' => $data], ['all_news' => $allData]);
+        return view('website.business', ['business' => $data], ['all_news' => $allData] );
     }
 
     /**

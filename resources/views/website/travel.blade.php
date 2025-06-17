@@ -16,8 +16,8 @@
                         <div class="col-lg-6">
                             <a href="show_news/{{$tr->id}}">
                                 <div class="position-relative overflow-hidden">
-                                    <img class="img-fluid w-100"
-                                        src="{{url('admin/upload/news/' . $tr->image . '')}}" alt="activity-user" />
+                                    <img class="img-fluid w-100" src="{{url('admin/upload/news/' . $tr->image . '')}}"
+                                        alt="activity-user" />
                                 </div>
                             </a>
                             <div class="py-3">
@@ -30,7 +30,7 @@
                                     </a>
                                 </big>
                                 <small>
-
+                                    <p class="text-secondary mt-2">{{$tr->date}}</p>
                                 </small>
                             </div>
                             <p class="mt-3 mb-4">{{$tr->description}}</p>
@@ -55,7 +55,9 @@
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
                                             <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
-                                            <small>June 4, 2025 </small>
+                                            <small>
+                                                <p class="text-secondary mt-2">{{$n->date}}</p>
+                                            </small>
                                         </div>
                                     </div>
                                 </div>

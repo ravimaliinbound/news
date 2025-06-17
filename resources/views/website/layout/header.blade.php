@@ -79,7 +79,7 @@
                             <?php
                             } else {
                                 ?>
-                            <a href="login" class="nav-item nav-link text-danger" id="travel">Login</a>
+                            <a href="/login" class="nav-item nav-link text-danger" id="travel">Login</a>
                             <?php
                             }
                                 ?>

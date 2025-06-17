@@ -54,6 +54,8 @@
                                 <h6 class="font-medium mb-0">Don't have an Account?</h6>
                                 <a href="signup" class="text-primary-500">Create Account</a>
                             </div>
+                            <br>
+                            <a href="/index" class="text-primary-500">Back</a>
                         </form>
                     </div>
                 </div>

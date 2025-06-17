@@ -30,7 +30,7 @@
                                     </a>
                                 </big>
                                 <small>
-
+                                    <p class="text-secondary mt-2">{{$sci->date}}</p>
                                 </small>
                             </div>
                             <p class="mt-3 mb-4">{{$sci->description}}</p>
@@ -55,7 +55,9 @@
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
                                             <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
-                                            <small>June 4, 2025 </small>
+                                            <small>
+                                                <p class="text-secondary mt-2">{{$n->date}}</p>
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
