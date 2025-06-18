@@ -33,7 +33,10 @@
                                     <p class="text-secondary mt-2">{{$sci->date}}</p>
                                 </small>
                             </div>
-                            <p class="mt-3 mb-4">{{$sci->description}}</p>
+                            @php
+                                $desc = $sci->description;
+                            @endphp
+                            <p class="mt-3 mb-4"><?php echo $desc; ?></p>
                         </div>
                     @endforeach
                 </div>

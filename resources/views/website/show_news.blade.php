@@ -17,6 +17,9 @@
                             <p class="text-dark mb-0 link-hover">{{$news->heading}}</p>
                         </b>
                     </big>
+                    <small>
+                        <p class="text-secondary mt-2">{{$news->date}}</p>
+                    </small>
                 </div>
                 <div class="position-relative overflow-hidden ">
                     <img class="img-fluid  w-100" src="{{url('admin/upload/news/' . $news->image . '')}}"
@@ -25,7 +28,10 @@
                 <div class="py-3">
                     <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$news->category}}</a>
                 </div>
-                <p class="mt-3 mb-4">{{$news->description}}</p>
+                @php
+                    $desc = $news->description;
+                @endphp
+                <p class="mt-3 mb-4"><?php echo $desc; ?></p>
             </div>
             <div class="col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 pt-0">
@@ -44,10 +50,12 @@
                                     <div class="col-7">
                                         <div class="features-content d-flex flex-column">
                                             <a href="{{$n->id}}" class="h6">{{$n->heading}}</a>
-                                            <small>June 4, 2025 </small>
+                                            <small>
+                                                <p class="text-secondary mt-2">{{$n->date}}</p>
+                                            </small>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         @endforeach

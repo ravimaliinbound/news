@@ -29,11 +29,14 @@
                                         </b>
                                     </a>
                                 </big>
-                                 <small>
-                                        <p class="text-secondary mt-2">{{$ent->date}}</p>
-                                    </small>
+                                <small>
+                                    <p class="text-secondary mt-2">{{$ent->date}}</p>
+                                </small>
                             </div>
-                            <p class="mt-3 mb-4" id="ent_descr">{{$ent->description}}</p>
+                            @php
+                                $desc = $ent->description;
+                            @endphp
+                            <p class="mt-3 mb-4"><?php echo $desc; ?></p>
                         </div>
                     @endforeach
                 </div>

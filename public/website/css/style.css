@@ -457,3 +457,10 @@
     justify-content: center;
     margin: 150px auto;
 }
+
+.desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+    overflow: hidden;
+}

@@ -20,7 +20,7 @@
                                         alt="activity-user" />
                                 </div>
                             </a>
-                            <div class="py-3">
+                            <div class="py-1">
                                 <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$tr->category}}</a>
                                 <big>
                                     <a href="show_news/{{$tr->id}}">
@@ -33,7 +33,10 @@
                                     <p class="text-secondary mt-2">{{$tr->date}}</p>
                                 </small>
                             </div>
-                            <p class="mt-3 mb-4">{{$tr->description}}</p>
+                            @php
+                                $desc = $tr->description;
+                            @endphp
+                            <p class="mb-4 desc"><?php echo $desc; ?></p>
                         </div>
                     @endforeach
                 </div>

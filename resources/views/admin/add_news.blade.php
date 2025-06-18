@@ -38,6 +38,15 @@
                             @error('category')
                                 <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
+                            <div class="form-group mb-2">
+                                <label for="image" class="text-dark"
+                                    style="font-weight: 600; font-size : 18px">Image</label>
+                                <input type="file" class="form-control mt-2" id="image" value="{{old('image')}}"
+                                    name="image">
+                            </div>
+                            @error('image')
+                                <div class="text-danger mb-2">{{ $message }}</div>
+                            @enderror
                             <label for="editor" class="text-dark"
                                 style="font-weight: 600; font-size : 18px">Description</label>
                             <div class="form-group mt-2">
@@ -69,7 +78,14 @@
     ClassicEditor
         .create(document.querySelector('#editor'), {
             ckfinder: {
-                uploadUrl: "{{ route('ckeditor.upload') . '?_token=' . csrf_token() }}"
+                // uploadUrl: "{{ route('upload') . '?_token=' . csrf_token() }}"
+            },
+            toolbar: {
+                items: [
+                    'heading', '|',
+                    'bold', 'italic', 'link', 'bulletedList', 'numberedList', '', '|',
+                    'blockQuote', 'insertTable', 'undo', 'redo'
+                ]
             }
         })
         .then(editor => {

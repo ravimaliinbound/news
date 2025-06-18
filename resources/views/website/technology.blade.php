@@ -19,7 +19,7 @@
                                     <img class="img-fluid w-100" src="{{url('admin/upload/news/' . $tech->image . '')}}"
                                         alt="activity-user" />
                                 </div>
-                                <div class="py-3">
+                                <div class="py-1"> 
                                     <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$tech->category}}</a>
                                     <big>
                                         <a href="show_news/{{$tech->id}}">
@@ -28,11 +28,14 @@
                                             </b>
                                         </a>
                                     </big>
-                                     <small>
+                                    <small>
                                         <p class="text-secondary mt-2">{{$tech->date}}</p>
                                     </small>
                                 </div>
-                                <p class="mt-3 mb-4">{{$tech->description}}</p>
+                                @php
+                                    $desc = $tech->description;
+                                @endphp
+                                <p class="mb-4"><?php echo $desc; ?></p>
                             </a>
                         </div>
                     @endforeach
