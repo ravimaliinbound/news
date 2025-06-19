@@ -29,7 +29,7 @@ Route::get('/404', function () {
 
 Route::get('/',[NewsController::class,'create']);
 Route::get('/index',[NewsController::class,'create']);
-Route::get('/show_news/{id}',[NewsController::class,'show_news']);
+Route::get('/show_news/{id}',[NewsController::class,'show_news'])->name('show_news');
 
 Route::get('/technology',[TechnologyController::class,'create']);
 
@@ -41,17 +41,20 @@ Route::get('/science',[ScienceController::class,'create']);
 
 Route::get('/travel',[TravelController::class,'create']);
 
+
 /*
  * Login, logout, signup
  */
 
-Route::get('/user-logout',[UserController::class,'user_logout']);
+Route::get('/signup',[UserController::class,'signup']);
+Route::post('/signup',[UserController::class,'store']);
 
 Route::get('/login',[UserController::class,'create']);
 Route::post('/login',[UserController::class,'user_auth']);
 
-Route::get('/signup',[UserController::class,'signup']);
-Route::post('/signup',[UserController::class,'store']);
+Route::get('/user-profile',[UserController::class,'profile']);
+
+Route::get('/user-logout',[UserController::class,'user_logout']);
 
 /*
  * For admin panel

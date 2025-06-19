@@ -74,15 +74,17 @@
 
                             <?php
                             if (session()->get('user_id')) {
-                                ?>
-                            <a href="user-logout" class="nav-item nav-link text-danger" onclick="confirm('Do you really want to logout?');" id="travel">Logout</a>
+                            ?>
+                                <a href="/user-profile" class="nav-item nav-link" id="profile">Profile</a>
+                                <a href="/user-logout" class="nav-item nav-link text-danger"
+                                    onclick="return confirm('Do you really want to logout?');" id="travel">Logout</a>
                             <?php
                             } else {
-                                ?>
-                            <a href="/login" class="nav-item nav-link text-danger" id="travel">Login</a>
+                            ?>
+                                <a href="/login" class="nav-item nav-link text-danger" id="travel">Login</a>
                             <?php
                             }
-                                ?>
+                            ?>
                         </div>
                     </div>
                 </nav>

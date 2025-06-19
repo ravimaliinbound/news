@@ -459,8 +459,15 @@
 }
 
 .desc {
+    margin-bottom: 20px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+    overflow: hidden;
+}
+.heads {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;  /* Number of lines displayed before it truncate */
     overflow: hidden;
 }

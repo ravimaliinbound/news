@@ -21,7 +21,7 @@
                             <!-- <a href="#"><img src="../assets/images/logo-dark.svg" alt="img" class="mx-auto auth-logo"/></a> -->
                         </div>
                         <h4 class="text-center font-medium mb-4">Sign up</h4>
-                        <form action="" class="login_form" method="post">
+                        <form action="" class="login_form" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-2">
                                 <input type="text" class="form-control" id="name" value="{{old('name')}}"
@@ -42,6 +42,13 @@
                                     placeholder="Enter password" name="password">
                             </div>
                             @error('password')
+                                <div class="text-danger mb-2">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group mb-2">
+                                <input type="file" class="form-control mt-2" id="image" value="{{old('image')}}"
+                                    name="image">
+                            </div>
+                            @error('image')
                                 <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="checkbox mb-4">

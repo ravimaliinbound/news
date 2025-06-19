@@ -14,17 +14,17 @@
                 <div class="row">
                     @foreach ($news as $n)
                         <div class="col-lg-6">
-                            <a href="show_news/{{$n->id}}">
+                            <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                 <div class="position-relative overflow-hidden">
                                     <img class="img-fluid w-100" src="{{url('admin/upload/news/' . $n->image . '')}}"
-                                        alt="activity-user" />
+                                        alt="activity-user" style="height: 250px;" />
                                 </div>
                                 <div class="py-1">
                                     <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
                                     <big>
-                                        <a href="show_news/{{$n->id}}">
+                                        <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <b>
-                                                <p class="text-dark mb-0 link-hover">{{$n->heading}}</p>
+                                                <p class="text-dark mb-0 link-hover heads">{{$n->heading}}</p>
                                             </b>
                                         </a>
                                     </big>
@@ -35,7 +35,9 @@
                                 @php
                                     $desc = $n->description;
                                 @endphp
-                                <p class="mb-4 desc"><?php echo $desc; ?></p>
+                                <div class="desc">
+                                    <p class="mb-4"><?php echo $desc; ?></p>
+                                </div>
                             </a>
                         </div>
                     @endforeach
@@ -47,19 +49,20 @@
                         @foreach($news as $n)
                             <div class="col-12">
                                 <div class="row g-4 align-items-center">
-                                    <div class="col-5">
-                                        <a href="show_news/{{$n->id}}">
+                                    <div class="col-5" style="height: 100px;">
+                                        <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <div class="overflow-hidden">
                                                 <img src="{{url('admin/upload/news/' . $n->image . '')}}"
                                                     class="img-fluid w-100" alt="">
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-7" style="height: 100px;">
                                         <div class="features-content d-flex flex-column">
-                                            <a href="show_news/{{$n->id}}" class="h6">{{$n->heading}}</a>
+                                            <a href="{{ route('show_news', base64_encode($n->id)) }}"
+                                                class="h6 heads">{{$n->heading}}</a>
                                             <small>
-                                                <p class="text-secondary mt-2">{{$n->date}}</p>
+                                                <p class="text-secondary">{{$n->date}}</p>
                                             </small>
                                         </div>
                                     </div>

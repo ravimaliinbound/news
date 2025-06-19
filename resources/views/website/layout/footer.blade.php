@@ -23,9 +23,9 @@
                     <div class="d-flex line-h">
                         <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://x.com/kaRaviKumarbc"><i
                                 class="fab fa-twitter text-dark"></i></a>
-                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://www.facebook.com"><i
                                 class="fab fa-facebook-f text-dark"></i></a>
-                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+                        <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://www.youtube.com/"><i
                                 class="fab fa-youtube text-dark"></i></a>
                         <a class="btn btn-light btn-md-square rounded-circle"
                             href="https://www.linkedin.com/in/skilled-ravi/"><i
@@ -40,7 +40,8 @@
                         Technology</a>
                     <a class="btn-link text-dark" href="/business"><i class="fas fa-angle-right text-dark me-2"></i>
                         Business</a>
-                    <a class="btn-link text-dark" href="/entertainment"><i class="fas fa-angle-right text-dark me-2"></i>
+                    <a class="btn-link text-dark" href="/entertainment"><i
+                            class="fas fa-angle-right text-dark me-2"></i>
                         Entertainment</a>
                     <a class="btn-link text-dark" href="/science"><i class="fas fa-angle-right text-dark me-2"></i>
                         Science</a>

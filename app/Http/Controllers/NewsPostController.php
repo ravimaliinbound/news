@@ -38,8 +38,9 @@ class NewsPostController extends Controller
             'heading' => 'required',
             'category' => 'required',
             'description' => 'required',
-            'image' => 'required|image'
+            'image' => 'required'
         ]);
+
         $data = new news_post();
 
         $data->admin_id = 1;
@@ -60,7 +61,7 @@ class NewsPostController extends Controller
     }
     // public function uploadImage(Request $request)
     // {
-        
+
     //     if ($request->hasFile('upload')) {
     //         $file = $request->file('upload');
     //         $extension = $request->file('upload')->getClientOriginalExtension();

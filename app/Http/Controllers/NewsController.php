@@ -30,7 +30,7 @@ class NewsController extends Controller
     }
     public function show_news(Request $request, $id)
     {
-        $data = news_post::where('id', $id)->first();
+        $data = news_post::where('id', base64_decode($id))->first();
 
         $dataa = news_post::all()->sortByDesc('id')->skip(0)->take(6);
 

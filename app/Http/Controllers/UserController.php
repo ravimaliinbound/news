@@ -36,13 +36,11 @@ class UserController extends Controller
     {
         $id = session()->get('user_id');
         $data = news_user::where('id', $id)->first();
-        return view('website.profile', ['customer' => $data]);
+        return view('website.profile', ['user' => $data]);
     }
     public function user_logout()
     {
         session()->pull('user_id');
-        session()->pull('email');
-        session()->pull('name');
 
         echo "<script>
         alert('Logout Success !');
@@ -54,17 +52,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|alpha:ascii|min:3|max:15',
-            'email' => 'required|email|unique:news_users',
-            'password' => 'required|min:8|max:12',
-        ], [
-            'name.required' => 'Name field is required',
-            'email.required' => 'Email field is required',
-            'email.email' => 'Please enter a valid email',
-            'email.unique' => 'Email has already been taken',
-            'password.required' => 'Password field is required',
-        ]);
+        $validated = $request->validate(
+            [
+                'name' => 'required|alpha:ascii|min:3|max:15',
+                'email' => 'required|email|unique:news_users',
+                'password' => 'required|min:8|max:12',
+                'image' => 'required'
+            ],
+            [
+                'name.required' => 'Name field is required',
+                'email.required' => 'Email field is required',
+                'email.email' => 'Please enter a valid email',
+                'email.unique' => 'Email has already been taken',
+                'password.required' => 'Password field is required',
+            ]
+        );
 
         $data = new news_user;
 
@@ -72,14 +74,15 @@ class UserController extends Controller
         $data->email = $request->email;
         $email = $data->email = $request->email;
         $data->password = Hash::make($request->password);
-
+        $file = $request->file('image');
+        $filename = time() . "_img." . $request->file('image')->getClientOriginalExtension();
+        $file->move('website/upload/users/', $filename);
+        $data->image = $filename;
 
         $data->save();
         // $emaildata = array("name" => $request->name, "email" => $request->email, "password" => $request->password);
         // Mail::to($email)->send(new welcomemail($emaildata));
         session()->put('user_id', $data->id);
-        session()->put('email', $data->email);
-        session()->put('name', $data->name);
         echo "<script>
         alert('Signup Success !');
         window.location='/index';
@@ -105,8 +108,6 @@ class UserController extends Controller
         if ($data) {
             if (Hash::check($password, $data->password)) {
                 session()->put('user_id', $data->id);
-                session()->put('email', $data->email);
-                session()->put('name', $data->name);
 
                 echo "<script> 
                     alert('Login Suuceess !');
