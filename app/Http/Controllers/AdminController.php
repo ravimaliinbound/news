@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\news_admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.index');
+        $admins = news_admin::get();
+        return view('admin.index', compact('admins'));
     }
 
     public function login()
@@ -50,9 +52,8 @@ class AdminController extends Controller
             'password.required' => 'Password field is required',
         ]);
 
-        $email = $request->adm_email;
-        $password = $request->adm_password;
-
+        $email = $request->email;
+        $password = $request->password;
         $data = news_admin::where('email', $email)->first();
         if ($data) {
             if (Hash::check($password, $data->password)) {
@@ -89,8 +90,8 @@ class AdminController extends Controller
 
         echo "<script>
         alert('Logout Success !');
-        window.location='/';
-     </script>";
+        window.location='/admin-login';
+        </script>";
     }
 
     /**
@@ -104,17 +105,38 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function manage_profile()
     {
-        //
+        $id = session()->get('admin_id');
+        $admin = news_admin::find($id);
+        return view('admin.manage_profile', compact('admin'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $validated = $request->validate(
+            [
+                'name' => 'required|min:3|max:15',
+                'email' => 'required|email',
+            ]
+        );
+        $id = session()->get('admin_id');
+        
+        session()->put('admin_name', $request->name);
+        session()->put('admin_email', $request->email);
+        $admin = news_admin::find($id);
+
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+
+        $admin->save();
+        echo "<script>
+        alert('Profile updated successfully !');
+        window.location='/dashboard';
+        </script>";
     }
 
     /**

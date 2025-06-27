@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\news_post;
-use App\Models\news_admin;;
+use App\Models\news_admin;
+;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,9 +24,11 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        $data = news_post::where('category', 'like', 'business')->get()->sortByDesc('id');
+        $data = news_post::with('admins')
+        ->where('category','business')
+        ->get()->sortByDesc('id');
         $allData = news_post::all()->sortByDesc('id')->skip(0)->take(8);
-        return view('website.business', ['business' => $data], ['all_news' => $allData] );
+        return view('website.business', ['business' => $data], ['all_news' => $allData]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\news_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -139,7 +140,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = news_user::find(base64_decode($id));
+        return view('website.edit', compact('user'));
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\news_post;
 
 use Illuminate\Http\Request;
@@ -20,17 +21,13 @@ class NewsController extends Controller
      */
     public function create()
     {
-        // showing news in random order
-        // $data = news_post::all()->skip(0)->take(8)->sortBy(function ($item) {
-        //     return rand();
-        // });  
-
-        $data = news_post::all()->sortByDesc('id')->skip(0)->take(8);
+        $data = news_post::with('admins')->get()->sortByDesc('id')->skip(0)->take(6);
         return view('website.index', ['news' => $data]);
     }
     public function show_news(Request $request, $id)
     {
-        $data = news_post::where('id', base64_decode($id))->first();
+        $data = news_post::with('admins')
+            ->where('id', base64_decode($id))->first();
 
         $dataa = news_post::all()->sortByDesc('id')->skip(0)->take(6);
 

@@ -85,7 +85,7 @@
                         <i data-feather="monitor"></i>
                     </li>
                     <li class="pc-item pc-hasmenu">
-                        <a href="#!" class="pc-link"><span class="pc-micon"> <i class="fa-solid fa-newspaper"></i>
+                        <a href="#" class="pc-link"><span class="pc-micon"><i class="fa-solid fa-bars"></i>
                             </span><span class="pc-mtext">News</span><span class="pc-arrow"><i
                                     class="ti ti-chevron-right"></i></span></a>
                         <ul class="pc-submenu">
@@ -139,45 +139,27 @@
                                         class="w-10 rounded-full" />
                                 </div>
                                 <div class="grow ms-3">
-                                    <h6 class="mb-1 text-white">Carson Darrin 🖖</h6>
-                                    <span class="text-white">carson.darrin@company.io</span>
+                                    <h6 class="mb-1 text-white">{{ session()->get('admin_name') }} </h6>
+                                    <span class="text-white">{{ session()->get('admin_email') }}</span>
                                 </div>
                             </div>
                         </div>
                         <div class="dropdown-body py-4 px-5">
                             <div class="profile-notification-scroll position-relative"
                                 style="max-height: calc(100vh - 225px)">
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('manage_profile') }}" class="dropdown-item">
                                     <span>
-                                        <svg class="pc-icon text-muted me-2 inline-block">
-                                            <use xlink:href="#custom-setting-outline"></use>
-                                        </svg>
-                                        <span>Settings</span>
-                                    </span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <span>
-                                        <svg class="pc-icon text-muted me-2 inline-block">
-                                            <use xlink:href="#custom-share-bold"></use>
-                                        </svg>
-                                        <span>Share</span>
-                                    </span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <span>
-                                        <svg class="pc-icon text-muted me-2 inline-block">
-                                            <use xlink:href="#custom-lock-outline"></use>
-                                        </svg>
-                                        <span>Change Password</span>
+                                        <i class="fa-solid fa-user" style="font-size: 13px"></i>
+                                        <span style="margin-left: 5px">Manage Profile</span>
                                     </span>
                                 </a>
                                 <div class="grid my-3">
-                                    <button class="btn btn-primary flex items-center justify-center">
+                                    <a href="{{ route('admin_logout') }}" class="btn btn-primary flex items-center justify-center" onclick="return confirm('Are you sure to logout?')">
                                         <svg class="pc-icon me-2 w-[22px] h-[22px]">
                                             <use xlink:href="#custom-logout-1-outline"></use>
                                         </svg>
                                         Logout
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

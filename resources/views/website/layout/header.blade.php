@@ -54,7 +54,7 @@
         <div class="container-fluid bg-light">
             <div class="container px-0">
                 <nav class="navbar navbar-light navbar-expand-xl">
-                    <a href="index" class="navbar-brand mt-3">
+                    <a href="/index" class="navbar-brand mt-3">
                         <p class="text-primary display-6 mb-2" style="line-height: 0;">Taza Khabar</p>
                         <small class="text-body fw-normal" style="letter-spacing: 18px;">Newspaper</small>
                         <!-- <img src="{{url('website/img/logo.png')}}" alt="" height="77px"> -->

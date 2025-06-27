@@ -11,34 +11,32 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover text-dark">
                             <tbody>
                                 <tr class="unread">
-                                    <td>Sr. No.</td>
-                                    <td>Headline</td>
-                                    <td>Category</td>
-                                    <td>Description</td>
-                                    <td>Image</td>
-                                    <td>Action</td>
+                                    <th>Sr. No.</th>
+                                    <th>Headline</th>
+                                    <th>Category</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
                                 </tr>
                                 @php $sl = 1; @endphp
                                 @foreach ($news as $n)
 
-                                    <tr class="unread">
-                                        <td>{{ $sl }}</td>
-                                        <td style="width: 50px">{{ $n->heading }}</td>
-                                        <td>{{ $n->category }}</td>
-                                        <td>ravi@gmail.com</td>
-                                        <td>
-                                            <img style="width: 50px" src="{{url('admin/upload/news/' . $n->image . '')}}"
-                                                alt="activity-user" />
-                                        </td>
-                                        <td>
-                                            <a href="#!" class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Delete</a>
-                                            <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Edit</a>
-                                        </td>
-                                    </tr>
-                                    @php $sl++ @endphp
+                                <tr class="unread">
+                                    <th>{{ $sl }}</th>
+                                    <th style="width: 50px">{{ $n->heading }}</th>
+                                    <th>{{ $n->category }}</th>
+                                    <th>
+                                        <img style="width: 60px; margin-left: 110px" src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                            alt="activity-user" />
+                                    </th>
+                                    <th>
+                                        <a href="#" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('news_delete', base64_encode($n->id)) }}" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                    </th>
+                                </tr>
+                                @php $sl++ @endphp
                                 @endforeach
                             </tbody>
                         </table>

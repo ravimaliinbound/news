@@ -24,12 +24,14 @@
                                     <big>
                                         <a href="{{ route('show_news', base64_encode($b->id)) }}">
                                             <b>
-                                                <p class="text-dark mb-0 link-hover">{{$b->heading}}</p>
+                                                <p class="text-dark mb-0 link-hover heads">{{$b->heading}}</p>
                                             </b>
                                         </a>
                                     </big>
                                     <small>
-                                        <p class="text-secondary mt-2">{{$b->date}}</p>
+                                        <p class="text-secondary mt-2">By <span
+                                                class="text-dark">{{ $b->admins->name }}</span>&nbsp; -
+                                            &nbsp;<span>{{$b->date}}</span></p>
                                     </small>
                                 </div>
                                 @php

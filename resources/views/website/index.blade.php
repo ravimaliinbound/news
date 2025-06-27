@@ -29,14 +29,16 @@
                                         </a>
                                     </big>
                                     <small>
-                                        <p class="text-secondary mt-2">{{$n->date}}</p>
+                                        <p class="text-secondary mt-2">By <span
+                                                class="text-dark">{{ $n->admins->name }}</span>&nbsp; -
+                                            &nbsp;<span>{{$n->date}}</span></p>
                                     </small>
                                 </div>
                                 @php
                                     $desc = $n->description;
                                 @endphp
                                 <div class="desc">
-                                    <p class="mb-4"><?php echo $desc; ?></p>
+                                    <p class="mb-4"><?php    echo $desc; ?></p>
                                 </div>
                             </a>
                         </div>

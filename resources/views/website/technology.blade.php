@@ -29,7 +29,9 @@
                                         </a>
                                     </big>
                                     <small>
-                                        <p class="text-secondary mt-2">{{$tech->date}}</p>
+                                       <p class="text-secondary mt-2">By <span
+                                                class="text-dark">{{ $tech->admins->name }}</span>&nbsp; -
+                                            &nbsp;<span>{{$tech->date}}</span></p>
                                     </small>
                                 </div>
                                 @php

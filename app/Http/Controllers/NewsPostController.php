@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use App\Models\news_post;
 use Illuminate\Http\Request;
 
@@ -41,9 +42,11 @@ class NewsPostController extends Controller
             'image' => 'required'
         ]);
 
+        $admin_id = session()->get('admin_id');
+
         $data = new news_post();
 
-        $data->admin_id = 1;
+        $data->admin_id = $admin_id;
         $data->heading = $request->heading;
         $data->category = $request->category;
         $data->description = $request->description;
@@ -100,6 +103,15 @@ class NewsPostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = news_post::find(base64_decode($id));
+        $filePath = 'admin/upload/news/' . $data->image;
+        if (File::exists(public_path($filePath))) {
+            File::delete(public_path($filePath));
+        }
+        $data->delete();
+        echo "<script>
+            alert('News deleted successfully!');
+            window.location='/manage-news';
+            </script>";
     }
 }

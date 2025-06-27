@@ -10,9 +10,11 @@
             <p class="mt-3">All news about the web are published on this page.</p>
         </div>
         <div class="py-3" style="width: 1100px;">
-            <h1 class="text-dark mb-0 link-hover">{{$news->heading}}</h1>
+            <h1 class="text-dark mb-0">{{$news->heading}}</h1>
             <small>
-                <p class="text-secondary mt-2">{{$news->date}}</p>
+                <p class="text-secondary mt-2">By <span
+                        class="text-dark">{{ $news->admins->name }}</span>&nbsp; -
+                    &nbsp;<span>{{$news->date}}</span></p>
             </small>
         </div>
         <div class="row g-4 my-3">

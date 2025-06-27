@@ -11,33 +11,22 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover text-dark">
                             <tbody>
-                                <tr class="unread">
-                                   <td>Sr. No.</td>
-                                   <td>Name</td>
-                                    <td>Email</td>
-                                    <td>Image</td>
-                                    <!-- <td>
-                                        <a href="#!" class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                        <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                    </td> -->
+                                <tr>
+                                    <th>Sr. No.</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
                                 </tr>
-                                <tr class="unread">
-                                    <td>
-                                        1
-                                    </td>
-                                   <td>Ravi Mali</td>
-                                    <td>ravi@gmail.com</td>
-                                     <td>
-                                        <img class="rounded-full max-w-10" style="width: 40px"
-                                            src="{{url('admin/images/user/avatar-1.jpg')}}" alt="activity-user" />
-                                    </td>
-                                    <!-- <td>
-                                        <a href="#!" class="badge bg-theme-bg-2 text-white text-[12px] mx-2">Reject</a>
-                                        <a href="#!" class="badge bg-theme-bg-1 text-white text-[12px]">Approve</a>
-                                    </td> -->
+                                @php $num = 1; @endphp
+                                @foreach ($admins as $admin)
+                                <tr>
+                                    <th>{{ $num }}</th>
+                                    <th>{{ $admin->name }}</th>
+                                    <th>{{$admin->email}}</th>
                                 </tr>
+                                @php $num++ @endphp
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

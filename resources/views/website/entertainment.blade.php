@@ -30,7 +30,9 @@
                                     </a>
                                 </big>
                                 <small>
-                                    <p class="text-secondary mt-2">{{$ent->date}}</p>
+                                    <p class="text-secondary mt-2">By <span
+                                            class="text-dark">{{ $ent->admins->name }}</span>&nbsp; -
+                                        &nbsp;<span>{{$ent->date}}</span></p>
                                 </small>
                             </div>
                             @php

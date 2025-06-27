@@ -18,7 +18,7 @@
                     <h4 class="mb-4 text-dark">Get In Touch</h4>
                     <p class="text-secondary line-h">Address: <span class="text-dark">1203 Shilp Zaveri, Shyamal Cross
                             Road, Ahmedabad, Gujarat</span></p>
-                    <p class="text-secondary line-h">Email: <span class="text-dark">newsers@gmail.com</span></p>
+                    <p class="text-secondary line-h">Email: <span class="text-dark">tazakhabar@gmail.com</span></p>
                     <p class="text-secondary line-h">Phone: <span class="text-dark">+91 9352238608</span></p>
                     <div class="d-flex line-h">
                         <a class="btn btn-light me-2 btn-md-square rounded-circle" href="https://x.com/kaRaviKumarbc"><i
