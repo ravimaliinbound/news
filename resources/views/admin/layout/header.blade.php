@@ -72,7 +72,7 @@
                 <ul class="pc-navbar">
                     <li class="pc-item">
                     <li class="pc-item">
-                        <a href="dashboard" class="pc-link">
+                        <a href="{{ route('dashboard') }}" class="pc-link">
                             <span class="pc-micon">
                                 <i data-feather="home"></i>
                             </span>
@@ -86,11 +86,20 @@
                     </li>
                     <li class="pc-item pc-hasmenu">
                         <a href="#" class="pc-link"><span class="pc-micon"><i class="fa-solid fa-bars"></i>
+                            </span><span class="pc-mtext">User</span><span class="pc-arrow"><i
+                                    class="ti ti-chevron-right"></i></span></a>
+                        <ul class="pc-submenu">
+                            <li class="pc-item"><a class="pc-link" href="{{ route('show_users') }}">Approve User</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('manage_users') }}">Manage User</a></li>
+                        </ul>
+                    </li>
+                    <li class="pc-item pc-hasmenu">
+                        <a href="#" class="pc-link"><span class="pc-micon"><i class="fa-solid fa-bars"></i>
                             </span><span class="pc-mtext">News</span><span class="pc-arrow"><i
                                     class="ti ti-chevron-right"></i></span></a>
                         <ul class="pc-submenu">
-                            <li class="pc-item"><a class="pc-link" href="insert-news">Add News</a></li>
-                            <li class="pc-item"><a class="pc-link" href="manage-news">Manage News</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('insert-news') }}">Add News</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('manage-news') }}">Manage News</a></li>
                         </ul>
                     </li>
                 </ul>

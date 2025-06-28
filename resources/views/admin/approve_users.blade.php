@@ -7,36 +7,39 @@
         <div class="col-span-12 xl:col-span-8 md:col-span-6">
             <div class="card table-card">
                 <div class="card-header">
-                    <h5>Manage News</h5>
+                    <h5>Approve Signup Requests</h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover text-dark">
                             <tbody>
-                                <tr class="unread">
+                                <tr>
                                     <th>Sr. No.</th>
-                                    <th>Headline</th>
-                                    <th>Category</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
                                     <th>Image</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 @php $sl = 1; @endphp
-                                @foreach ($news as $n)
-
-                                    <tr class="unread">
+                                @foreach ($users as $user)
+                                    <tr>
                                         <th>{{ $sl }}</th>
-                                        <th style="width: 50px">{{ $n->heading }}</th>
-                                        <th>{{ $n->category }}</th>
-                                        <th>
-                                            <img style="width: 60px; margin-left: 110px"
-                                                src="{{url('admin/upload/news/' . $n->image . '')}}" alt="activity-user" />
+                                        <th>{{ $user->name }}</th>
+                                        <th>{{ $user->email }}</th>
+                                        <th style="width: 80px;">
+                                            <img style="width: 50px; height: 50px; border-radius: 50%;"
+                                                src="{{url('website/upload/users/' . $user->image . '')}}"
+                                                alt="activity-user" />
                                         </th>
+                                        <th><span class="btn btn-warning">{{ $user->status }}</span></th>
                                         <th>
-                                            <a href="{{ route('news_edit', base64_encode($n->id)) }}"
-                                                class="btn btn-success">Edit</a>
-                                            <a href="{{ route('news_delete', base64_encode($n->id)) }}"
+                                            <a href="{{ route('approve_request', base64_encode($user->id)) }}"
+                                                class="btn btn-success">Approve</a>
+                                            <a href="{{ route('cancel_requset', base64_encode($user->id)) }}"
                                                 class="btn btn-danger"
-                                                onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                                onclick="return confirm('Are you sure to cancel the approval?')"><i
+                                                    class="fa-solid fa-xmark"></i></a>
                                         </th>
                                     </tr>
                                     @php $sl++ @endphp

@@ -87,7 +87,8 @@ class NewsPostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $news = news_post::find(base64_decode($id));
+        return view('admin.edit_news', compact('news'));
     }
 
     /**
@@ -95,7 +96,34 @@ class NewsPostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'heading' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+        ]);
+
+        $news = news_post::find(base64_decode($id));
+        $news->heading = $request->heading;
+        $news->category = $request->category;
+        $news->description = $request->description;
+
+        if ($request->file('image')) {
+            $filePath = 'admin/upload/news/' . $news->image;
+            if (File::exists(public_path($filePath))) {
+                File::delete(public_path($filePath));
+            }
+
+            $file = $request->file('image');
+            $filename = time() . "_img." . $request->file('image')->getClientOriginalExtension();
+            $file->move('admin/upload/news/', $filename);
+            $news->image = $filename;
+        }
+
+        $news->save();
+        echo "<script>
+            alert('News updated successfully!');
+            window.location='/manage-news';
+            </script>";
     }
 
     /**

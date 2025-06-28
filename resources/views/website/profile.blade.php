@@ -14,14 +14,14 @@
                 <div class="col-lg-4" style="margin-left: 200px;">
                     <div class="card" style="width:400px;">
                         <img class="card-img-top" style="height:400px;"
-                            src="{{url('website/upload/users/' . $user->image . '')}}" alt="Card image"
+                            src="{{ asset('website/upload/users/' . $user->image) }}" alt="Card image"
                             style="width:100%">
                     </div>
                 </div>
                 <div class="col-lg-4 text-dark" style="margin-left: 200px;">
                     <h3>Name: {{$user->name}}</h3>
                     <h3>Email: {{$user->email}}</h3>
-                    <a href="{{ route('update_user_profile', base64_encode($user->id)) }}" class="btn btn-success mt-5">Edit Profile</a>
+                    <a href="{{ route('edit_user_profile', base64_encode($user->id)) }}" class="btn btn-success mt-5">Edit Profile</a>
                 </div>
             </div>
         </div>

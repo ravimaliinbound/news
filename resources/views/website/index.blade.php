@@ -16,11 +16,11 @@
                         <div class="col-lg-6">
                             <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                 <div class="position-relative overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                    <img class="img-fluid w-100" src="{{ asset('admin/upload/news/' . $n->image) }}"
                                         alt="activity-user" style="height: 250px;" />
                                 </div>
                                 <div class="py-1">
-                                    <a href="#" class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
+                                    <a href="{{ route("$n->category") }}" class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
                                     <big>
                                         <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <b>
@@ -30,7 +30,7 @@
                                     </big>
                                     <small>
                                         <p class="text-secondary mt-2">By <span
-                                                class="text-dark">{{ $n->admins->name }}</span>&nbsp; -
+                                                class="text-dark">{{ $n->admins->name }}</span> —
                                             &nbsp;<span>{{$n->date}}</span></p>
                                     </small>
                                 </div>
@@ -54,7 +54,7 @@
                                     <div class="col-5" style="height: 100px;">
                                         <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <div class="overflow-hidden">
-                                                <img src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                                <img src="{{ asset('admin/upload/news/' . $n->image) }}"
                                                     class="img-fluid w-100" alt="">
                                             </div>
                                         </a>

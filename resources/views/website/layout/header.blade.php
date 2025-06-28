@@ -54,7 +54,7 @@
         <div class="container-fluid bg-light">
             <div class="container px-0">
                 <nav class="navbar navbar-light navbar-expand-xl">
-                    <a href="/index" class="navbar-brand mt-3">
+                    <a href="{{ route('index') }}" class="navbar-brand mt-3">
                         <p class="text-primary display-6 mb-2" style="line-height: 0;">Taza Khabar</p>
                         <small class="text-body fw-normal" style="letter-spacing: 18px;">Newspaper</small>
                         <!-- <img src="{{url('website/img/logo.png')}}" alt="" height="77px"> -->
@@ -64,24 +64,24 @@
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
-                        <div class="navbar-nav mx-auto border-top ">
-                            <a href="/index" class="nav-item nav-link" id="home">News</a>
-                            <a href="/technology" class="nav-item nav-link" id="technology">Technology</a>
-                            <a href="/business" class="nav-item nav-link" id="business">Business</a>
-                            <a href="/entertainment" class="nav-item nav-link" id="entertainment">Entertainment</a>
-                            <a href="/science" class="nav-item nav-link" id="science">Science / Health</a>
-                            <a href="/travel" class="nav-item nav-link" id="travel">Travel</a>
+                        <div class="navbar-nav mx-auto border-top">
+                            <a href="{{ route('index') }}" class="nav-item nav-link" id="home">News</a>
+                            <a href="{{ route('technology') }}" class="nav-item nav-link" id="technology">Technology</a>
+                            <a href="{{ route('business') }}" class="nav-item nav-link" id="business">Business</a>
+                            <a href="{{ route('entertainment') }}" class="nav-item nav-link" id="entertainment">Entertainment</a>
+                            <a href="{{ route('science') }}" class="nav-item nav-link" id="science">Science / Health</a>
+                            <a href="{{ route('travel') }}" class="nav-item nav-link" id="travel">Travel</a>
 
                             <?php
                             if (session()->get('user_id')) {
                             ?>
-                                <a href="/user-profile" class="nav-item nav-link" id="profile">Profile</a>
-                                <a href="/user-logout" class="nav-item nav-link text-danger"
+                                <a href="{{ route('user-profile') }}" class="nav-item nav-link" id="profile">Profile</a>
+                                <a href="{{ route('user-logout') }}" class="nav-item nav-link text-danger"
                                     onclick="return confirm('Do you really want to logout?');" id="travel">Logout</a>
                             <?php
                             } else {
                             ?>
-                                <a href="/login" class="nav-item nav-link text-danger" id="travel">Login</a>
+                                <a href="{{ route('login') }}" class="nav-item nav-link text-danger" id="travel">Login</a>
                             <?php
                             }
                             ?>

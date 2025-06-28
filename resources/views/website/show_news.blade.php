@@ -13,7 +13,7 @@
             <h1 class="text-dark mb-0">{{$news->heading}}</h1>
             <small>
                 <p class="text-secondary mt-2">By <span
-                        class="text-dark">{{ $news->admins->name }}</span>&nbsp; -
+                        class="text-dark">{{ $news->admins->name }}</span> —
                     &nbsp;<span>{{$news->date}}</span></p>
             </small>
         </div>
@@ -21,7 +21,7 @@
             <div class="col-lg-8 col-xl-8 mt-0">
 
                 <div class="position-relative overflow-hidden ">
-                    <img class="img-fluid  w-100" src="{{url('admin/upload/news/' . $news->image . '')}}"
+                    <img class="img-fluid  w-100" src="{{ asset('admin/upload/news/' . $news->image) }}"
                         alt="activity-user" />
                 </div>
                 @php
@@ -38,7 +38,7 @@
                                 <div class="col-5" style="height: 100px;">
                                     <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                         <div class="overflow-hidden">
-                                            <img src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                            <img src="{{ asset('admin/upload/news/' . $n->image) }}"
                                                 class="img-fluid w-100" alt="">
                                         </div>
                                     </a>

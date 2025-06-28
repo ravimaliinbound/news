@@ -17,7 +17,7 @@
                             <a href="{{ route('show_news', base64_encode($sci->id)) }}">
                                 <div class="position-relative overflow-hidden">
                                     <img class="img-fluid w-100" style="height: 250px;"
-                                        src="{{url('admin/upload/news/' . $sci->image . '')}}" alt="activity-user" />
+                                        src="{{ asset('admin/upload/news/' . $sci->image) }}" alt="activity-user" />
                                 </div>
                             </a>
                             <div class="py-3">
@@ -31,7 +31,7 @@
                                 </big>
                                 <small>
                                     <p class="text-secondary mt-2">By <span
-                                            class="text-dark">{{ $sci->admins->name }}</span>&nbsp; -
+                                            class="text-dark">{{ $sci->admins->name }}</span> —
                                         &nbsp;<span>{{$sci->date}}</span></p>
                                 </small>
                             </div>
@@ -54,7 +54,7 @@
                                     <div class="col-5" style="height: 100px;">
                                         <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <div class="overflow-hidden">
-                                                <img src="{{url('admin/upload/news/' . $n->image . '')}}"
+                                                <img src="{{ asset('admin/upload/news/' . $n->image) }}"
                                                     class="img-fluid w-100" alt="">
                                             </div>
                                         </a>

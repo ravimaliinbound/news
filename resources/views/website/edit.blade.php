@@ -28,31 +28,33 @@
                                     placeholder="Enter name" name="name">
                             </div>
                             @error('name')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="form-group mb-2">
                                 <input type="email" class="form-control" id="email" value="{{ $user->email }}"
                                     placeholder="Enter email" name="email">
                             </div>
                             @error('email')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="form-group mb-2">
                                 <input type="file" class="form-control mt-2" id="image" value="{{old('image')}}"
                                     name="image">
                             </div>
                             @error('image')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
-                            <div class="checkbox mb-4">
-                                <!-- <label><input type="checkbox" name="remember"> Remember me</label> -->
+                            <center>
+                                <img class="card-img-top mt-4" style="height: 100px;"
+                                    src="{{ asset('website/upload/users/' . $user->image) }}" alt="Card image"
+                                    style="width: 100px">
+                            </center>
 
-                            </div>
                             <div class="mt-4 text-center mb-4">
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </div>
-                            
-                            <a href="/index" class="text-primary-500">Back</a>
+
+                            <a href="/user-profile" class="text-primary-500">Back</a>
                         </form>
                     </div>
                 </div>

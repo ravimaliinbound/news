@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
+use Illuminate\Support\Facades\File;
+
 class UserController extends Controller
 {
     /**
@@ -55,17 +57,14 @@ class UserController extends Controller
     {
         $validated = $request->validate(
             [
-                'name' => 'required|alpha:ascii|min:3|max:15',
+                'name' => 'required|min:3|max:15',
                 'email' => 'required|email|unique:news_users',
                 'password' => 'required|min:8|max:12',
                 'image' => 'required'
             ],
             [
-                'name.required' => 'Name field is required',
-                'email.required' => 'Email field is required',
                 'email.email' => 'Please enter a valid email',
                 'email.unique' => 'Email has already been taken',
-                'password.required' => 'Password field is required',
             ]
         );
 
@@ -120,6 +119,17 @@ class UserController extends Controller
                         window.location='/login';
                     </script>";
             }
+            if ($data->status == 'blocked') {
+                echo "<script> 
+                        alert('User is currently blocked !'); 
+                        window.location='/login';
+                    </script>";
+            } elseif ($data->status == 'pending') {
+                echo "<script> 
+                        alert('Your login request is not approved yet !'); 
+                        window.location='/login';
+                    </script>";
+            }
         } else {
             echo "<script>
                 alert('User does not exist !');
@@ -149,7 +159,33 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate(
+            [
+                'name' => 'required|min:3|max:15',
+                'email' => 'required|email',
+            ],
+        );
+        $user = news_user::find(base64_decode($id));
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->file('image')) {
+
+            // Remove stored image
+            $filePath = 'website/upload/users/' . $user->image;
+            if (File::exists(public_path($filePath))) {
+                File::delete(public_path($filePath));
+            }
+            // Uploading image to folder
+            $file = $request->file('image');
+            $filename = time() . "_img." . $request->file('image')->getClientOriginalExtension();
+            $file->move('website/upload/users/', $filename);
+            $user->image = $filename;
+        }
+        $user->save();
+        echo "<script>
+                alert('Profile updated successfully !');
+                window.location='/user-profile';
+                </script>";
     }
 
     /**
@@ -158,5 +194,64 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    /**
+     * Show the list of users.
+     */
+    public function show_users()
+    {
+        $users = news_user::where('status', 'pending')->get();
+        return view('admin.approve_users', compact('users'));
+    }
+    public function manage_users()
+    {
+        $users = news_user::where('status', '!=', 'pending')
+            ->where('status', '!=', 'cancel')
+            ->get();
+        return view('admin.manage_users', compact('users'));
+    }
+    public function approve_request(string $id)
+    {
+        $user = news_user::find(base64_decode($id));
+        $user->status = 'approved';
+
+        $user->save();
+        echo "<script>
+                alert('Request approved !');
+                window.location='/show_users';
+                </script>";
+    }
+    public function cancel_requset(string $id)
+    {
+        $user = news_user::find(base64_decode($id));
+        $user->status = 'cancel';
+
+        $user->save();
+        echo "<script>
+                alert('Request cancelled !');
+                window.location='/show_users';
+                </script>";
+    }
+    public function block_unblock_user(string $id)
+    {
+        $user = news_user::find(base64_decode($id));
+        if ($user->status == 'blocked') {
+            $user->status = 'approved';
+
+            $user->save();
+            echo "<script>
+                alert('User unblocked !');
+                window.location='/manage_users';
+                </script>";
+        } elseif ($user->status == 'approved') {
+            $user->status = 'blocked';
+
+            $user->save();
+            echo "<script>
+                alert('User blocked !');
+                window.location='/manage_users';
+                </script>";
+        }
     }
 }
