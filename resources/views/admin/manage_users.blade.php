@@ -43,7 +43,7 @@
                                                 $text = 'Block User';
                                             }
                                         @endphp
-                                        <th><span class="<?php    echo $class ?>">{{ $user->status }}</span></th>
+                                        <th><span class="<?php    echo $class ?>" style="margin-left: 15px;">{{ $user->status }}</span></th>
                                         <th>
                                             <a href="{{ route('block_unblock_user', base64_encode($user->id)) }}"
                                                 class="{{ $block_class }}"

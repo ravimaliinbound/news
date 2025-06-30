@@ -20,26 +20,28 @@
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
-                                @php $sl = 1; @endphp
+                                @php $sl = 1 @endphp
                                 @foreach ($news as $n)
 
-                                    <tr class="unread">
-                                        <th>{{ $sl }}</th>
-                                        <th style="width: 50px">{{ $n->heading }}</th>
-                                        <th>{{ $n->category }}</th>
-                                        <th>
-                                            <img style="width: 60px; margin-left: 110px"
-                                                src="{{url('admin/upload/news/' . $n->image . '')}}" alt="activity-user" />
-                                        </th>
-                                        <th>
-                                            <a href="{{ route('news_edit', base64_encode($n->id)) }}"
-                                                class="btn btn-success">Edit</a>
-                                            <a href="{{ route('news_delete', base64_encode($n->id)) }}"
-                                                class="btn btn-danger"
-                                                onclick="return confirm('Are you sure to delete?')">Delete</a>
-                                        </th>
-                                    </tr>
-                                    @php $sl++ @endphp
+                                <tr class="unread">
+                                    <th>{{ $sl }}</th>
+                                    <th style="width: 50px">{{ $n->heading }}</th>
+                                    <th>{{ $n->category }}</th>
+                                    <th>
+                                        <img style="width: 60px; margin-left: 50px"
+                                            src="{{url('admin/upload/news/' . $n->image . '')}}" alt="activity-user" />
+                                    </th>
+                                    <th style="width: 300px; display: flex;">
+                                        <a href="{{ route('news.edit', base64_encode($n->id)) }}"
+                                            class="btn btn-success" style="width: 60px; margin-left: 80px">Edit</a>
+                                        <form action="{{ route('news.destroy', base64_encode($n->id)) }}" method="post">
+                                            @csrf
+                                            @method('Delete')
+                                            <button class="btn btn-danger" style="width: 80px; margin-left: 20px" onclick="return confirm('Are you sure to delete?')">Delete</button>
+                                        </form>
+                                    </th>
+                                </tr>
+                                @php $sl++ @endphp
                                 @endforeach
                             </tbody>
                         </table>

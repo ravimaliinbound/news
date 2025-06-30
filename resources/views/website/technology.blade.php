@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
-                <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Technology</a>
+                <a href="{{ route('technology') }}" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Technology</a>
             </div>
             <p class="mt-3 mb-4">All Technology news and updates are published on this page.</p>
         </div>
@@ -24,7 +24,7 @@
                                     <big>
                                         <a href="{{ route('show_news', base64_encode($tech->id)) }}">
                                             <b>
-                                                <p class="text-dark mb-0 link-hover">{{$tech->heading}}</p>
+                                                <p class="text-dark mb-0 link-hover heads">{{$tech->heading}}</p>
                                             </b>
                                         </a>
                                     </big>

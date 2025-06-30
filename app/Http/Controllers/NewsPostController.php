@@ -13,7 +13,8 @@ class NewsPostController extends Controller
      */
     public function index()
     {
-        //
+        $data = news_post::all();
+        return view('admin.manage_news', ['news' => $data]);
     }
 
     /**
@@ -23,18 +24,12 @@ class NewsPostController extends Controller
     {
         return view('admin.add_news');
     }
-    public function manage_news()
-    {
-        $data = news_post::all();
-        return view('admin.manage_news', ['news' => $data]);
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $validated = $request->validate([
             'heading' => 'required',
             'category' => 'required',
@@ -59,7 +54,7 @@ class NewsPostController extends Controller
         $data->save();
         echo "<script>
         alert('News Inserted Successfully !');
-        window.location='/insert-news';
+        window.location='/news';
         </script>";
     }
     // public function uploadImage(Request $request)
@@ -122,7 +117,7 @@ class NewsPostController extends Controller
         $news->save();
         echo "<script>
             alert('News updated successfully!');
-            window.location='/manage-news';
+            window.location='/news';
             </script>";
     }
 
@@ -131,6 +126,7 @@ class NewsPostController extends Controller
      */
     public function destroy(string $id)
     {
+        // dd(base64_decode($id));
         $data = news_post::find(base64_decode($id));
         $filePath = 'admin/upload/news/' . $data->image;
         if (File::exists(public_path($filePath))) {
@@ -139,7 +135,7 @@ class NewsPostController extends Controller
         $data->delete();
         echo "<script>
             alert('News deleted successfully!');
-            window.location='/manage-news';
+            window.location='/news';
             </script>";
     }
 }

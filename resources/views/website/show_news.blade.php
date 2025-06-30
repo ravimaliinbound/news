@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
-                <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : News</a>
+                <a href="{{ route('show_news', base64_encode($news->id)) }}" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : News</a>
             </div>
             <p class="mt-3">All news about the web are published on this page.</p>
         </div>

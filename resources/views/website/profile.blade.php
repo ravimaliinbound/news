@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
-                <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Profile</a>
+                <a href="{{ route('user-profile') }}" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Profile</a>
             </div>
             <p class="mt-3 mb-4">Your information is published on this page.</p>
         </div>

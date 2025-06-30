@@ -98,8 +98,8 @@
                             </span><span class="pc-mtext">News</span><span class="pc-arrow"><i
                                     class="ti ti-chevron-right"></i></span></a>
                         <ul class="pc-submenu">
-                            <li class="pc-item"><a class="pc-link" href="{{ route('insert-news') }}">Add News</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('manage-news') }}">Manage News</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('news.create') }}">Add News</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('news.index') }}">Manage News</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -18,12 +18,12 @@ use App\Http\Middleware\UserMiddleware;
  * 404 view, for unknown route which is not defined
  */
 
-Route::fallback(function () {
-    return redirect('404');
-});
-Route::get('/404', function () {
-    return view('website.404');
-});
+// Route::fallback(function () {
+//     return redirect('404');
+// });
+// Route::get('/404', function () {
+//     return view('website.404');
+// });
 
 /*
  * Frontend
@@ -65,14 +65,29 @@ Route::post('/manage-profile', [AdminController::class, 'update'])->name('update
  * Dashboard
  */
 
+Route::middleware(AdminMiddleware::class)->group(function () {
+    Route::resource('news', NewsPostController::class)->names([
+        'index' => 'news.index',
+        'create' => 'news.create',
+        'store' => 'news.store',
+        'edit' => 'news.edit',
+        'update' => 'news.update',
+        'destroy' => 'news.destroy',
+    ]);
+});
+
+
 Route::get('/dashboard', [AdminController::class, 'create'])->name('dashboard')->middleware(AdminMiddleware::class);
-Route::get('/insert-news', [NewsPostController::class, 'create'])->name('insert-news')->middleware(AdminMiddleware::class);
-Route::post('/insert-news', [NewsPostController::class, 'store'])->middleware(AdminMiddleware::class);
-Route::post('/upload', [NewsPostController::class, 'uploadImage'])->name('upload')->middleware(AdminMiddleware::class);
-Route::get('/manage-news', [NewsPostController::class, 'manage_news'])->name('manage-news')->middleware(AdminMiddleware::class);
-Route::get('/news-delete/{id}', [NewsPostController::class, 'destroy'])->name('news_delete')->middleware(AdminMiddleware::class);
-Route::get('/news-edit/{id}', [NewsPostController::class, 'edit'])->name('news_edit')->middleware(AdminMiddleware::class);
-Route::post('/news-edit/{id}', [NewsPostController::class, 'update'])->name('news_update')->middleware(AdminMiddleware::class);
+
+// Route::get('news', [NewsPostController::class, 'index'])->name('manage-news')->middleware(AdminMiddleware::class);
+// Route::get('news/create', [NewsPostController::class, 'create'])->name('insert-news')->middleware(AdminMiddleware::class);
+// Route::post('news/create', [NewsPostController::class, 'store'])->middleware(AdminMiddleware::class);
+// Route::get('news/{id}/edit', [NewsPostController::class, 'edit'])->name('news_edit')->middleware(AdminMiddleware::class);
+// Route::post('news/{id}/edit', [NewsPostController::class, 'update'])->name('news_update')->middleware(AdminMiddleware::class);
+// Route::get('news/{id}/delete', [NewsPostController::class, 'destroy'])->name('news_delete')->middleware(AdminMiddleware::class);
+// Route::get('news/{id}/destroy', [NewsPostController::class, 'destroy'])->name('news.destroy')->middleware(AdminMiddleware::class);
+
+Route::post('/upload', [NewsPostController::class, 'uploadImage'])->name('news.upload')->middleware(AdminMiddleware::class);
 
 Route::get('/show_users', [UserController::class, 'show_users'])->name('show_users')->middleware(AdminMiddleware::class);
 Route::get('/manage_users', [UserController::class, 'manage_users'])->name('manage_users')->middleware(AdminMiddleware::class);
@@ -80,5 +95,3 @@ Route::get('/manage_users', [UserController::class, 'manage_users'])->name('mana
 Route::get('/approve_request/{id}', [UserController::class, 'approve_request'])->name('approve_request')->middleware(AdminMiddleware::class);
 Route::get('/cancel_requset/{id}', [UserController::class, 'cancel_requset'])->name('cancel_requset')->middleware(AdminMiddleware::class);
 Route::get('/block_unblock_user/{id}', [UserController::class, 'block_unblock_user'])->name('block_unblock_user')->middleware(AdminMiddleware::class);
-
-

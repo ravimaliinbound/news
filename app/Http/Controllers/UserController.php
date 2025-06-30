@@ -6,7 +6,9 @@ use App\Models\news_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-
+use App\Mail\UserApproveMail;
+use App\Mail\UserCancelMail;
+use App\Mail\BlockUserMail;
 use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
@@ -80,11 +82,9 @@ class UserController extends Controller
         $data->image = $filename;
 
         $data->save();
-        // $emaildata = array("name" => $request->name, "email" => $request->email, "password" => $request->password);
-        // Mail::to($email)->send(new welcomemail($emaildata));
-        session()->put('user_id', $data->id);
+
         echo "<script>
-        alert('Signup Success !');
+        alert('Signup success. Request sent for approval!');
         window.location='/index';
         </script>";
     }
@@ -107,26 +107,27 @@ class UserController extends Controller
         $data = news_user::where('email', $email)->first();
         if ($data) {
             if (Hash::check($password, $data->password)) {
-                session()->put('user_id', $data->id);
-
-                echo "<script> 
-                    alert('Login Suuceess !');
-                    window.location='/';
-                    </script>";
-            } else {
-                echo "<script> 
-                        alert('Password not match !'); 
-                        window.location='/login';
-                    </script>";
-            }
-            if ($data->status == 'blocked') {
-                echo "<script> 
+                if ($data->status == 'blocked') {
+                    echo "<script> 
                         alert('User is currently blocked !'); 
                         window.location='/login';
                     </script>";
-            } elseif ($data->status == 'pending') {
-                echo "<script> 
+                } elseif ($data->status == 'pending') {
+                    echo "<script> 
                         alert('Your login request is not approved yet !'); 
+                        window.location='/login';
+                    </script>";
+                } else {
+                    session()->put('user_id', $data->id);
+
+                    echo "<script> 
+                    alert('Login Suuceess !');
+                    window.location='/';
+                    </script>";
+                }
+            } else {
+                echo "<script> 
+                        alert('Password not match !'); 
                         window.location='/login';
                     </script>";
             }
@@ -215,8 +216,12 @@ class UserController extends Controller
     {
         $user = news_user::find(base64_decode($id));
         $user->status = 'approved';
+        $email = $user->email;
+        $name = $user->name;
 
         $user->save();
+        $emaildata = array("name" => $name, "email" => $email);
+        Mail::to($email)->send(new UserApproveMail($emaildata));
         echo "<script>
                 alert('Request approved !');
                 window.location='/show_users';
@@ -226,8 +231,12 @@ class UserController extends Controller
     {
         $user = news_user::find(base64_decode($id));
         $user->status = 'cancel';
+        $name = $user->name;
+        $email = $user->email;
 
         $user->save();
+        $emaildata = array("name" => $name, "email" => $email);
+        Mail::to($email)->send(new UserCancelMail($emaildata));
         echo "<script>
                 alert('Request cancelled !');
                 window.location='/show_users';
@@ -246,8 +255,12 @@ class UserController extends Controller
                 </script>";
         } elseif ($user->status == 'approved') {
             $user->status = 'blocked';
+            $name = $user->name;
+            $email = $user->email;
 
             $user->save();
+            $emaildata = array("name" => $name, "email" => $email);
+            Mail::to($email)->send(new BlockUserMail($emaildata));
             echo "<script>
                 alert('User blocked !');
                 window.location='/manage_users';
