@@ -35,6 +35,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Template Stylesheet -->
     <link href="{{url('website/css/style.css')}}" rel="stylesheet">
 </head>
@@ -68,22 +73,23 @@
                             <a href="{{ route('index') }}" class="nav-item nav-link" id="home">News</a>
                             <a href="{{ route('technology') }}" class="nav-item nav-link" id="technology">Technology</a>
                             <a href="{{ route('business') }}" class="nav-item nav-link" id="business">Business</a>
-                            <a href="{{ route('entertainment') }}" class="nav-item nav-link" id="entertainment">Entertainment</a>
+                            <a href="{{ route('entertainment') }}" class="nav-item nav-link"
+                                id="entertainment">Entertainment</a>
                             <a href="{{ route('science') }}" class="nav-item nav-link" id="science">Science / Health</a>
                             <a href="{{ route('travel') }}" class="nav-item nav-link" id="travel">Travel</a>
 
                             <?php
-                            if (session()->get('user_id')) {
+if (session()->get('user_id')) {
                             ?>
-                                <a href="{{ route('user-profile') }}" class="nav-item nav-link" id="profile">Profile</a>
-                                <a href="{{ route('user-logout') }}" class="nav-item nav-link text-danger"
-                                    onclick="return confirm('Do you really want to logout?');" id="travel">Logout</a>
+                            <a href="{{ route('user-profile') }}" class="nav-item nav-link" id="profile">Profile</a>
+                            <a href="{{ route('user-logout') }}" class="nav-item nav-link text-danger"
+                                onclick="return confirm('Do you really want to logout?');" id="travel">Logout</a>
                             <?php
-                            } else {
+} else {
                             ?>
-                                <a href="{{ route('login') }}" class="nav-item nav-link text-danger" id="travel">Login</a>
+                            <a href="{{ route('login') }}" class="nav-item nav-link text-danger" id="travel">Login</a>
                             <?php
-                            }
+}
                             ?>
                         </div>
                     </div>

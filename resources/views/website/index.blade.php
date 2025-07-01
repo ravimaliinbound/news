@@ -3,6 +3,11 @@
 <!-- Main Post Section Start -->
 <div class="container-fluid py-5">
     <div class="container">
+        @if (session('success'))
+            <div class="mb-5 border border-success rounded success_msg" style="width: fit-content;">
+                <p class="text-success p-2" style="margin: 10px 20px"> {{ session('success') }} </p>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
                 <a href="#" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : News</a>
@@ -20,7 +25,8 @@
                                         alt="activity-user" style="height: 250px;" />
                                 </div>
                                 <div class="py-1">
-                                    <a href="{{ route("$n->category") }}" class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
+                                    <a href="{{ route("$n->category") }}"
+                                        class="mb-0 link-hover text-uppercase text-primary">{{$n->category}}</a>
                                     <big>
                                         <a href="{{ route('show_news', base64_encode($n->id)) }}">
                                             <b>
@@ -82,6 +88,9 @@
 <script>
     $(document).ready(function () {
         $("#home").addClass('active');
+        setTimeout(function () {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
     });
 </script>
 <!-- Most Populer News End -->

@@ -1,8 +1,19 @@
 @include('admin.layout.headers')
 
-
 <div class="auth-main relative">
-    <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen">
+    @if (session('success'))
+        <div class="mb-5 border border-success rounded success_msg"
+            style="width: fit-content; margin-left: 870px; margin-top: 50px">
+            <p class="text-success p-4" style="font-size: 18px;"> {{ session('success') }} </p>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="mb-5 border border-danger rounded success_msg"
+            style="width: fit-content; margin-left: 870px; margin-top: 50px">
+            <p class="text-danger p-4" style="font-size: 18px;"> {{ session('error') }} </p>
+        </div>
+    @endif
+    <div class="auth-wrapper v1 flex items-center w-full h-full min-h-screen"  style="margin-top: -100px;">
         <div class="auth-form flex items-center justify-center grow flex-col min-h-screen relative p-6 ">
             <div class="w-full max-w-[350px] relative">
                 <div class="auth-bg ">
@@ -66,3 +77,10 @@
 </div>
 <!-- [ Main Content ] end -->
 @include('admin.layout.footer')
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
+    })
+</script>

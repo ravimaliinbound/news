@@ -3,6 +3,11 @@
 <!-- [ Main Content ] start -->
 <div class="pc-container">
     <div class="pc-content">
+        @if (session('success'))
+        <div class="mb-5 border border-success rounded success_msg" style="width: fit-content;">
+            <p class="text-success p-4" style="font-size: 18px;"> {{ session('success') }} </p>
+        </div>
+        @endif
         <!-- [ Main Content ] start -->
         <div class="col-span-12 xl:col-span-8 md:col-span-6">
             <div class="card">
@@ -21,7 +26,7 @@
                                     placeholder="Enter title" name="heading">
                             </div>
                             @error('heading')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="form-group mb-2 text-dark">
                                 <label for="category" class="text-dark"
@@ -36,7 +41,7 @@
                                 </select>
                             </div>
                             @error('category')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="form-group mb-2">
                                 <label for="image" class="text-dark"
@@ -45,7 +50,7 @@
                                     name="image">
                             </div>
                             @error('image')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <label for="editor" class="text-dark"
                                 style="font-weight: 600; font-size : 18px">Description</label>
@@ -54,7 +59,7 @@
                                     name="description">{{old('description')}}</textarea>
                             </div>
                             @error('description')
-                                <div class="text-danger mb-2">{{ $message }}</div>
+                            <div class="text-danger mb-2">{{ $message }}</div>
                             @enderror
                             <div class="mt-4 text-center mb-4">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -79,7 +84,7 @@
     ClassicEditor
         .create(document.querySelector('#editor'), {
             ckfinder: {
-                uploadUrl: "{{ route('news.upload') . '?_token=' . csrf_token() }}"
+                uploadUrl: "{{ route('upload') . '?_token=' . csrf_token() }}"
             },
             toolbar: {
                 items: [
@@ -98,3 +103,10 @@
 </script>
 
 @include('admin.layout.footer')
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
+    })
+</script>

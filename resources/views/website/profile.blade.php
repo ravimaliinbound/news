@@ -3,9 +3,15 @@
 <!-- Main Post Section Start -->
 <div class="container-fluid py-5">
     <div class="container">
+        @if (session('success'))
+            <div class="mb-5 border border-success rounded success_msg" style="width: fit-content;">
+                <p class="text-success p-2" style="margin: 10px 20px"> {{ session('success') }} </p>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-6" style="border-left: 2px solid deepskyblue;">
-                <a href="{{ route('user-profile') }}" class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Profile</a>
+                <a href="{{ route('user-profile') }}"
+                    class="display-5 text-dark mb-0 link-hover text-uppercase">Browsing : Profile</a>
             </div>
             <p class="mt-3 mb-4">Your information is published on this page.</p>
         </div>
@@ -21,7 +27,8 @@
                 <div class="col-lg-4 text-dark" style="margin-left: 200px;">
                     <h3>Name: {{$user->name}}</h3>
                     <h3>Email: {{$user->email}}</h3>
-                    <a href="{{ route('edit_user_profile', base64_encode($user->id)) }}" class="btn btn-success mt-5">Edit Profile</a>
+                    <a href="{{ route('edit_user_profile', base64_encode($user->id)) }}"
+                        class="btn btn-success mt-5">Edit Profile</a>
                 </div>
             </div>
         </div>
@@ -31,8 +38,11 @@
 <!-- Main Post Section End -->
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#profile").addClass('active');
+        setTimeout(function () {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
     });
 </script>
 <!-- Most Populer News End -->

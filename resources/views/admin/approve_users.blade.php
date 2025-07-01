@@ -3,6 +3,11 @@
 <!-- [ Main Content ] start -->
 <div class="pc-container">
     <div class="pc-content">
+        @if (session('success'))
+            <div class="mb-5 border border-success rounded success_msg" style="width: fit-content;">
+                <p class="text-success p-4" style="font-size: 18px;"> {{ session('success') }} </p>
+            </div>
+        @endif
         <!-- [ Main Content ] start -->
         <div class="col-span-12 xl:col-span-8 md:col-span-6">
             <div class="card table-card">
@@ -55,3 +60,10 @@
 </div>
 <!-- [ Main Content ] end -->
 @include('admin.layout.footer')
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
+    })
+</script>

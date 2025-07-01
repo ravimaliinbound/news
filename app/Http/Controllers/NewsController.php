@@ -21,7 +21,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        $data = news_post::with('admins')->get()->sortByDesc('id')->skip(0)->take(6);
+        $data = news_post::with('admins')->get()->sortByDesc('id');
         return view('website.index', ['news' => $data]);
     }
     public function show_news(Request $request, $id)

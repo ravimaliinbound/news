@@ -76,18 +76,9 @@ Route::middleware(AdminMiddleware::class)->group(function () {
     ]);
 });
 
+Route::post('/upload', [NewsPostController::class, 'uploadImage'])->name('upload')->middleware(AdminMiddleware::class);
 
 Route::get('/dashboard', [AdminController::class, 'create'])->name('dashboard')->middleware(AdminMiddleware::class);
-
-// Route::get('news', [NewsPostController::class, 'index'])->name('manage-news')->middleware(AdminMiddleware::class);
-// Route::get('news/create', [NewsPostController::class, 'create'])->name('insert-news')->middleware(AdminMiddleware::class);
-// Route::post('news/create', [NewsPostController::class, 'store'])->middleware(AdminMiddleware::class);
-// Route::get('news/{id}/edit', [NewsPostController::class, 'edit'])->name('news_edit')->middleware(AdminMiddleware::class);
-// Route::post('news/{id}/edit', [NewsPostController::class, 'update'])->name('news_update')->middleware(AdminMiddleware::class);
-// Route::get('news/{id}/delete', [NewsPostController::class, 'destroy'])->name('news_delete')->middleware(AdminMiddleware::class);
-// Route::get('news/{id}/destroy', [NewsPostController::class, 'destroy'])->name('news.destroy')->middleware(AdminMiddleware::class);
-
-Route::post('/upload', [NewsPostController::class, 'uploadImage'])->name('news.upload')->middleware(AdminMiddleware::class);
 
 Route::get('/show_users', [UserController::class, 'show_users'])->name('show_users')->middleware(AdminMiddleware::class);
 Route::get('/manage_users', [UserController::class, 'manage_users'])->name('manage_users')->middleware(AdminMiddleware::class);

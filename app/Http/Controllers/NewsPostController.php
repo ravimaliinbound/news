@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\File;
 use App\Models\news_post;
 use Illuminate\Http\Request;
-
 class NewsPostController extends Controller
 {
     /**
@@ -52,23 +51,9 @@ class NewsPostController extends Controller
         $data->image = $filename;
 
         $data->save();
-        echo "<script>
-        alert('News Inserted Successfully !');
-        window.location='/news';
-        </script>";
+        return redirect()->route('news.create')->with('success', 'News Inserted successfully !');
     }
-    // public function uploadImage(Request $request)
-    // {
 
-    //     if ($request->hasFile('upload')) {
-    //         $file = $request->file('upload');
-    //         $extension = $request->file('upload')->getClientOriginalExtension();
-    //         $filename = time() . "_img." . $extension;
-    //         $file->move('admin/upload/news/', $filename);
-    //         $url = ('admin/upload/news/' . $filename);
-    //         return response()->json(['filename' => $filename, 'uploaded' => 1, 'url' => $url]);
-    //     }
-    // }
     /**
      * Display the specified resource.
      */
@@ -115,10 +100,7 @@ class NewsPostController extends Controller
         }
 
         $news->save();
-        echo "<script>
-            alert('News updated successfully!');
-            window.location='/news';
-            </script>";
+        return redirect()->route('news.index')->with('success', 'News updated successfully !');
     }
 
     /**
@@ -133,9 +115,6 @@ class NewsPostController extends Controller
             File::delete(public_path($filePath));
         }
         $data->delete();
-        echo "<script>
-            alert('News deleted successfully!');
-            window.location='/news';
-            </script>";
+        return redirect()->route('news.index')->with('success', 'News deleted successfully !');
     }
 }

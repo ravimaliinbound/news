@@ -61,21 +61,12 @@ class AdminController extends Controller
                 session()->put('admin_email', $data->email);
                 session()->put('admin_name', $data->name);
 
-                echo "<script> 
-                    alert('Login Suuceess !');
-                    window.location='/dashboard';
-                    </script>";
+                return redirect()->route('dashboard')->with('success', 'Login Suuceess !');
             } else {
-                echo "<script> 
-                        alert('Password not match !'); 
-                        window.location='/admin-login';
-                    </script>";
+                return redirect()->route('admin-login')->with('error', 'Password not match !');
             }
         } else {
-            echo "<script>
-                alert('Admin does not exist !');
-                window.location='admin-login';
-             </script>";
+            return redirect()->route('admin-login')->with('error', 'Admin does not exist !');
         }
     }
 
@@ -88,10 +79,7 @@ class AdminController extends Controller
         session()->pull('admin_email');
         session()->pull('admin_name');
 
-        echo "<script>
-        alert('Logout Success !');
-        window.location='/admin-login';
-        </script>";
+        return redirect()->route('admin-login')->with('success', 'Logout Success !');
     }
 
     /**
@@ -124,7 +112,7 @@ class AdminController extends Controller
             ]
         );
         $id = session()->get('admin_id');
-        
+
         session()->put('admin_name', $request->name);
         session()->put('admin_email', $request->email);
         $admin = news_admin::find($id);
@@ -133,10 +121,7 @@ class AdminController extends Controller
         $admin->email = $request->email;
 
         $admin->save();
-        echo "<script>
-        alert('Profile updated successfully !');
-        window.location='/dashboard';
-        </script>";
+        return redirect()->route('dashboard')->with('success', 'Profile updated successfully !');
     }
 
     /**

@@ -33,6 +33,11 @@
     <link rel="stylesheet" href="{{url('admin/fonts/material.css')}}" />
     <!-- [Template CSS Files] -->
     <link rel="stylesheet" href="{{url('admin/css/style.css')}}" id="main-style-link" />
+    
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- [Font Awesome CDN] -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -89,8 +94,10 @@
                             </span><span class="pc-mtext">User</span><span class="pc-arrow"><i
                                     class="ti ti-chevron-right"></i></span></a>
                         <ul class="pc-submenu">
-                            <li class="pc-item"><a class="pc-link" href="{{ route('show_users') }}">Approve User</a></li>
-                            <li class="pc-item"><a class="pc-link" href="{{ route('manage_users') }}">Manage User</a></li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('show_users') }}">Approve User</a>
+                            </li>
+                            <li class="pc-item"><a class="pc-link" href="{{ route('manage_users') }}">Manage User</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="pc-item pc-hasmenu">
@@ -163,7 +170,9 @@
                                     </span>
                                 </a>
                                 <div class="grid my-3">
-                                    <a href="{{ route('admin_logout') }}" class="btn btn-primary flex items-center justify-center" onclick="return confirm('Are you sure to logout?')">
+                                    <a href="{{ route('admin_logout') }}"
+                                        class="btn btn-primary flex items-center justify-center"
+                                        onclick="return confirm('Are you sure to logout?')">
                                         <svg class="pc-icon me-2 w-[22px] h-[22px]">
                                             <use xlink:href="#custom-logout-1-outline"></use>
                                         </svg>

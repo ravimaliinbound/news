@@ -46,11 +46,7 @@ class UserController extends Controller
     public function user_logout()
     {
         session()->pull('user_id');
-
-        echo "<script>
-        alert('Logout Success !');
-        window.location='/';
-     </script>";
+        return redirect()->route('index')->with('success', 'Logout Success !');
     }
     /**
      * Store a newly created resource in storage.
@@ -82,11 +78,7 @@ class UserController extends Controller
         $data->image = $filename;
 
         $data->save();
-
-        echo "<script>
-        alert('Signup success. Request sent for approval!');
-        window.location='/index';
-        </script>";
+        return redirect()->route('index')->with('success', 'Signup request sent for approval !');
     }
 
     public function user_auth(Request $request)
@@ -107,35 +99,24 @@ class UserController extends Controller
         $data = news_user::where('email', $email)->first();
         if ($data) {
             if (Hash::check($password, $data->password)) {
-                if ($data->status == 'blocked') {
-                    echo "<script> 
-                        alert('User is currently blocked !'); 
-                        window.location='/login';
-                    </script>";
-                } elseif ($data->status == 'pending') {
-                    echo "<script> 
-                        alert('Your login request is not approved yet !'); 
-                        window.location='/login';
-                    </script>";
-                } else {
-                    session()->put('user_id', $data->id);
 
-                    echo "<script> 
-                    alert('Login Suuceess !');
-                    window.location='/';
-                    </script>";
+                if ($data->status == 'blocked') {
+                    return redirect()->route('login')->with('error', 'User is currently blocked !');
+                } 
+                elseif ($data->status == 'pending') {
+                    return redirect()->route('login')->with('error', 'Your login request is not approved yet !');
+                } 
+                else {
+                    session()->put('user_id', $data->id);
+                    return redirect()->route('index')->with('success', 'Login Success !');
                 }
-            } else {
-                echo "<script> 
-                        alert('Password not match !'); 
-                        window.location='/login';
-                    </script>";
+            } 
+            else {
+                return redirect()->route('login')->with('error', 'Password not match !');
             }
-        } else {
-            echo "<script>
-                alert('User does not exist !');
-                window.location='/login';
-             </script>";
+        } 
+        else {
+            return redirect()->route('login')->with('error', 'User does not exist !');
         }
     }
     /**
@@ -183,10 +164,7 @@ class UserController extends Controller
             $user->image = $filename;
         }
         $user->save();
-        echo "<script>
-                alert('Profile updated successfully !');
-                window.location='/user-profile';
-                </script>";
+        return redirect()->route('user-profile')->with('success', 'Profile updated successfully !');
     }
 
     /**
@@ -222,10 +200,7 @@ class UserController extends Controller
         $user->save();
         $emaildata = array("name" => $name, "email" => $email);
         Mail::to($email)->send(new UserApproveMail($emaildata));
-        echo "<script>
-                alert('Request approved !');
-                window.location='/show_users';
-                </script>";
+        return redirect()->route('show_users')->with('success', 'Request approved successfully !');
     }
     public function cancel_requset(string $id)
     {
@@ -237,10 +212,7 @@ class UserController extends Controller
         $user->save();
         $emaildata = array("name" => $name, "email" => $email);
         Mail::to($email)->send(new UserCancelMail($emaildata));
-        echo "<script>
-                alert('Request cancelled !');
-                window.location='/show_users';
-                </script>";
+        return redirect()->route('show_users')->with('success', 'Request cancelled successfully !');
     }
     public function block_unblock_user(string $id)
     {
@@ -249,10 +221,7 @@ class UserController extends Controller
             $user->status = 'approved';
 
             $user->save();
-            echo "<script>
-                alert('User unblocked !');
-                window.location='/manage_users';
-                </script>";
+            return redirect()->route('manage_users')->with('success', 'User unblocked successfully !');
         } elseif ($user->status == 'approved') {
             $user->status = 'blocked';
             $name = $user->name;
@@ -261,10 +230,7 @@ class UserController extends Controller
             $user->save();
             $emaildata = array("name" => $name, "email" => $email);
             Mail::to($email)->send(new BlockUserMail($emaildata));
-            echo "<script>
-                alert('User blocked !');
-                window.location='/manage_users';
-                </script>";
+            return redirect()->route('manage_users')->with('success', 'User blocked successfully !');
         }
     }
 }

@@ -4,6 +4,12 @@
 <div class="pc-container">
     <div class="pc-content">
         <!-- [ Main Content ] start -->
+        @if (session('success'))
+            <div class="mb-5 border border-success rounded success_msg" style="width: fit-content;">
+                <p class="text-success p-4" style="font-size: 18px;"> {{ session('success') }} </p>
+            </div>
+        @endif
+
         <div class="col-span-12 xl:col-span-8 md:col-span-6">
             <div class="card table-card">
                 <div class="card-header">
@@ -23,25 +29,26 @@
                                 @php $sl = 1 @endphp
                                 @foreach ($news as $n)
 
-                                <tr class="unread">
-                                    <th>{{ $sl }}</th>
-                                    <th style="width: 50px">{{ $n->heading }}</th>
-                                    <th>{{ $n->category }}</th>
-                                    <th>
-                                        <img style="width: 60px; margin-left: 50px"
-                                            src="{{url('admin/upload/news/' . $n->image . '')}}" alt="activity-user" />
-                                    </th>
-                                    <th style="width: 300px; display: flex;">
-                                        <a href="{{ route('news.edit', base64_encode($n->id)) }}"
-                                            class="btn btn-success" style="width: 60px; margin-left: 80px">Edit</a>
-                                        <form action="{{ route('news.destroy', base64_encode($n->id)) }}" method="post">
-                                            @csrf
-                                            @method('Delete')
-                                            <button class="btn btn-danger" style="width: 80px; margin-left: 20px" onclick="return confirm('Are you sure to delete?')">Delete</button>
-                                        </form>
-                                    </th>
-                                </tr>
-                                @php $sl++ @endphp
+                                    <tr class="unread">
+                                        <th>{{ $sl }}</th>
+                                        <th style="width: 50px">{{ $n->heading }}</th>
+                                        <th>{{ $n->category }}</th>
+                                        <th>
+                                            <img style="width: 60px; margin-left: 50px"
+                                                src="{{url('admin/upload/news/' . $n->image . '')}}" alt="activity-user" />
+                                        </th>
+                                        <th style="width: 300px; display: flex;">
+                                            <a href="{{ route('news.edit', base64_encode($n->id)) }}"
+                                                class="btn btn-success" style="width: 60px; margin-left: 80px">Edit</a>
+                                            <form action="{{ route('news.destroy', base64_encode($n->id)) }}" method="post">
+                                                @csrf
+                                                @method('Delete')
+                                                <button class="btn btn-danger" style="width: 80px; margin-left: 20px"
+                                                    onclick="return confirm('Are you sure to delete?')">Delete</button>
+                                            </form>
+                                        </th>
+                                    </tr>
+                                    @php $sl++ @endphp
                                 @endforeach
                             </tbody>
                         </table>
@@ -54,3 +61,10 @@
 </div>
 <!-- [ Main Content ] end -->
 @include('admin.layout.footer')
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.success_msg').fadeOut('slow');
+        }, 3000);
+    })
+</script>
